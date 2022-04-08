@@ -67,7 +67,7 @@ form label textarea {
     border: 1px solid #7eb5fc;
     width: 100%;
     border-radius: 10px;
-    height: 40px;
+    height: 45px;
 }
 
 main form a {
@@ -109,4 +109,23 @@ form label textarea {
     resize: none;
     height: 100px;
     padding-top: 2%;
+}
+
+main .authBtns {
+    display: block;
+    width: 40%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #2b2bff;
+    margin: 5% auto;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+main .authBtns:nth-child(1) {
+    background-color: transparent;
+    border: 1px solid #2b2bff;
+    color: #040494;
 }
