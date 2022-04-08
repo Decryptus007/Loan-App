@@ -69,6 +69,10 @@ form label textarea {
     height: 40px;
 }
 
+main form a {
+    color: white;
+}
+
 main form button {
     display: block;
     margin: auto;
@@ -103,4 +107,5 @@ main .signUp {
 form label textarea {
     resize: none;
     height: 100px;
+    padding-top: 2%;
 }
