@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.loginUI {
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.headTitle {
+    color: #2b2bff;
+    width: 100%;
+    text-align: center;
+}
+
+.headTitle h1 {
+    font-size: 3rem;
+    padding: 0;
+    margin-bottom: 1%;
+}
+
+.headTitle p {
+    font-size: 1.2rem;
+}
+
+.loginUI main {
+    margin: 5% auto;
+    padding: 1%;
+    width: 80%;
+}
+
+main form {
+    padding: 1%;
+    display: block;
+    margin: 5% auto;
+    width: 50vw;
+    border: 1px solid blue;
+    border-radius: 15px 15px 0 0;
+    background-color: #eff3fa;
+}
+
+main form div {
+    width: 100%;
+    margin: 5% auto;
+}
+
+main form span {
+    font-size: larger;
+    margin-bottom: 1%;
+}
+
+main form input {
+    display: block;
+    font-size: large;
+    padding-left: 2%;
+    border: 1px solid #7eb5fc;
+    width: 75%;
+    border-radius: 5px;
+    height: 40px;
+}
+
+main form button {
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+    width: 50%;
+    padding: 2%;
+    font-weight: 600;
+    font-size: larger;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2b2bff;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px #c0bfbf;
+}
