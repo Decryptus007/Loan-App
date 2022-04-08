@@ -31,18 +31,25 @@
     width: 80%;
 }
 
+main h2 {
+    text-align: center;
+    font-size: x-large;
+}
+
 main form {
     padding: 1%;
+    padding-bottom: 3%;
     display: block;
     margin: 5% auto;
     width: 50vw;
-    border: 1px solid blue;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px grey;
     background-color: #eff3fa;
 }
 
-main form div {
-    width: 100%;
+main form label {
+    display: block;
+    width: 75%;
     margin: 5% auto;
 }
 
@@ -51,20 +58,21 @@ main form span {
     margin-bottom: 1%;
 }
 
-main form input {
+main form input,
+form label textarea {
     display: block;
     font-size: large;
     padding-left: 2%;
     border: 1px solid #7eb5fc;
-    width: 75%;
-    border-radius: 5px;
+    width: 100%;
+    border-radius: 10px;
     height: 40px;
 }
 
 main form button {
     display: block;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 5%;
     width: 50%;
     padding: 2%;
     font-weight: 600;
@@ -76,4 +84,23 @@ main form button {
     color: white;
     border-radius: 10px;
     box-shadow: 2px 2px 15px #c0bfbf;
+    transition: .3s;
+}
+
+main form button:hover {
+    background-color: #040494;
+}
+
+main .signUp {
+    text-align: center;
+    font-size: large;
+}
+
+.signUp a {
+    color: inherit;
+}
+
+form label textarea {
+    resize: none;
+    height: 100px;
 }
