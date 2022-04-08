@@ -21,8 +21,14 @@
             <p>Online loan, as fast as 5 minutes</p>
         </section>
         <main>
-           <a class="authBtns" href="./signIn.html">Sign In</a>
-           <a class="authBtns" href="./signUp.html">Sign Up</a>
+            <h2>Log In</h2>
+            <form onsubmit="() => alert('Hi')">
+                <label><span>Email:</span><input type="email" placeholder="Input your Email" /></label>
+                <label><span>Password:</span><input type="password" placeholder="Input your Password" /></label>
+                <a href="./home.php"><button type="button">LOG IN</button></a>
+            </form>
+            <p class="signUp">Don't have an account? Create <a href="./signUp.php"
+                    class="signUpLink">account</a></p>
         </main>
     </div>
 </body>
