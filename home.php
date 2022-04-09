@@ -31,8 +31,15 @@ ob_start();
         <div class="header">
             <div class="nav">
                 <h1>Home</h1>
-                <p>Rukayat Adebimpe</p>
-                <a href="/logout.php">Log Out </a>
+          
+                <?php 
+                        // echo $_SESSION['email'];
+                        echo "welcome back user: ". $_SESSION['email'];
+
+                ?>
+                <a href="logout.php">
+                 Logout
+                 </a>
             </div>
         </div>
     </div>
