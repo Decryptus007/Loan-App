@@ -44,9 +44,23 @@ ob_start();
         <div class="pageUI">
         <div class="cards">
         <div class="card">
-            
+            <div class="cardHead">
+                <p>Loan Amount: <span>NGN 0</span></p>
+            </div>
+            <div class="cardTail">
+                <small>Loan Details</small>
+                <span class="pay">Apply Loan</span>
+            </div>
         </div>
-        <div class="card"></div>
+        <div class="card">
+            <div class="cardHead">
+                <p>Repayable Amount: <span>NGN 0</span></p>
+            </div>
+            <div class="cardTail">
+                <small>Repayment Details</small>
+                <span class="pay">Pay Now</span>
+            </div>
+        </div>
         </div>
         </div>
     </div>
