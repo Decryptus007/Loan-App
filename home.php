@@ -19,6 +19,7 @@ ob_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
@@ -30,17 +31,23 @@ ob_start();
     <div class="home">
         <div class="header">
             <div class="nav">
-                <h1>Home</h1>
-          
-                <?php 
-                        // echo $_SESSION['email'];
-                        echo "welcome back user: ". $_SESSION['email'];
-
-                ?>
-                <a href="logout.php">
-                 Logout
-                 </a>
+                <h1>SunPaid</h1>
+                <div class="otherNavs">
+                    <h2 class="pgName">Dashboard</h2>
+                    <a href="#"><p>Repayment</p></a>
+                    <a href="#"><p>Settings</p></a>
+                    <a href="#"><p>About</p></a>
+                    <a class="logOut" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                </div>
             </div>
+        </div>
+        <div class="pageUI">
+        <div class="cards">
+        <div class="card">
+            
+        </div>
+        <div class="card"></div>
+        </div>
         </div>
     </div>
 </body>

@@ -6,12 +6,63 @@
 }
 
 .home {
-    padding: 1%;
+    padding: 0 1%;
     width: 100vw;
 }
 
-.home .nav {
+.home .nav,
+.home .otherNavs {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.home .nav {
+    color: white;
+    padding: 3% 2%;
+    background: linear-gradient(to bottom, #5f8eca 65%, #4077c0);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 15px grey;
+}
+
+.nav h1 {
+    width: 48%;
+}
+
+.nav .otherNavs {
+    width: 50%;
+}
+
+.otherNavs a {
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 2%;
+}
+
+.otherNavs a.logOut {
+    font-size: x-large;
+}
+
+.otherNavs a:hover {
+    background-color: #4077c0;
+}
+
+.pageUI {
+    margin-top: 5%;
+}
+
+.pageUI .cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards .card {
+    width: 40%;
+    height: 250px;
+    box-shadow: 2px 2px 15px grey;
+    border-radius: 5px;
 }
