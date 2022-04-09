@@ -1,10 +1,47 @@
 <?php
+include_once('../db_connect.php');
 
+if(isset($_POST['submits']))
+{
+   
+$fname=$_POST['fname'];
+$mname=$_POST['mname'];
+$lname=$_POST['lname'];
+$email=$_POST['email'];
+$phone=$_POST['phone'];
+$nin=$_POST['nin'];
+$address=$_POST['address'];
+$password=md5($_POST['password']);
 
+$fname = mysqli_real_escape_string($conn, $fname);
+$mname = mysqli_real_escape_string($conn, $mname);
+$lname = mysqli_real_escape_string($conn, $lname);
+$email = mysqli_real_escape_string($conn, $email);
+$phone = mysqli_real_escape_string($conn, $phone);
+$nin = mysqli_real_escape_string($conn, $nin);
+$address = mysqli_real_escape_string($conn, $address);
+$password = mysqli_real_escape_string($conn, $password);
+  
+   
+    $sql=mysqli_query($conn,"select id from borrowers where email='$email'");
+    $row=mysqli_num_rows($sql);
+    
+        if($row>0){
+        echo "<script>alert('Email id already exist with another account. Please try with other email id');</script>";
+            } else{
+                $msg=mysqli_query($conn,"INSERT into borrowers(firstname,middlename,lastname,contact_no,address,email,password,tax_id) VALUES('$fname','$mname','$lname','$phone','$address','$email','$password','$nin')");
+    
+            if($msg)
+            {
+                echo "<script>alert('Registered successfully');</script>";
+                echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+            }
+        }
+}
+    
+     
+    ?>
 
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +67,7 @@
         </section>
         <main>
             <h2>Sign Up</h2>
-            <form id="sign-up">
+            <form id="sign-up" method="post">
                 <label><span>First Name:</span><input type="text" placeholder="FirstName" name="fname" /></label>
                 <label><span>Middle Name:</span><input type="text" placeholder="MiddleName" name="mname" /></label>
                 <label><span>Last Name:</span><input type="text" placeholder="LastName" name="lname" /></label>
@@ -39,7 +76,8 @@
                 <label><span>NIN Number:</span><input type="text" placeholder="NIN ID" name="nin" /></label>
                 <label><span>Your Address:</span><textarea placeholder="Your Address" name="address" ></textarea></label>
                 <label><span>Password:</span><input type="password" placeholder="Input your Password" name="password" /></label>
-                <button type="submit" name="submit" >SIGN UP</button>
+
+                <button type="submit" name="submits"> SIGN UP </button>
             </form>
             <p class="signUp">Already have an account? <a href="./index.php" class="signUpLink">Login</a></p>
         </main>
