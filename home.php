@@ -20,6 +20,7 @@
             <div class="nav">
                 <h1>Home</h1>
                 <p>Rukayat Adebimpe</p>
+                <button type="submit" name="logout"> Sign Out </button>
             </div>
         </div>
     </div>

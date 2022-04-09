@@ -1,3 +1,27 @@
+<?php
+session_start();
+// error_reporting(0);
+include_once('../db_connect.php');
+if(isset($_POST['login']))
+{
+$ret=mysqli_query($conn,"SELECT * FROM borrowers WHERE email='".$_POST['email']."' and password='".md5($_POST['password'])."'");
+$num=mysqli_fetch_array($ret);
+if($num>0)
+{
+
+$_SESSION['id']=$num['id'];
+$_SESSION['email']=$num['email'];
+header("location:home.php");
+ob_end_flush();
+}
+else
+{
+echo "<script>alert('Invalid username or password');</script>";
+}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +46,13 @@
         </section>
         <main>
             <h2>Log In</h2>
-            <form onsubmit="() => alert('Hi')">
-                <label><span>Email:</span><input type="email" placeholder="Input your Email" /></label>
-                <label><span>Password:</span><input type="password" placeholder="Input your Password" /></label>
-                <a href="./home.php"><button type="button">LOG IN</button></a>
+            <form onsubmit="() => alert('Hi')" method="post" >
+                <label><span>Email:</span><input type="email" placeholder="Input your Email" name="email" /></label>
+
+                <label><span>Password:</span><input type="password" placeholder="Input your Password" name="password" /></label>
+
+                <button type="submit" name="login">LOG IN </button>
+
             </form>
             <p class="signUp">Don't have an account? Create <a href="./signUp.php"
                     class="signUpLink">account</a></p>
