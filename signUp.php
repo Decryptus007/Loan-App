@@ -79,7 +79,7 @@ $password = mysqli_real_escape_string($conn, $password);
 
                 <button type="submit" name="submits"> SIGN UP </button>
             </form>
-            <p class="signUp">Already have an account? <a href="./index.php" class="signUpLink">Login</a></p>
+            <p class="signUp">Already have an account? <a href="./signIn.php" class="signUpLink">Login</a></p>
         </main>
     </div>
 </body>

@@ -27,7 +27,7 @@
 }
 
 .loginUI main {
-    margin: 5% auto;
+    margin: 3% auto;
     padding: 1%;
     width: 80%;
 }
@@ -113,6 +113,8 @@ form label textarea {
 
 main .authBtns {
     display: block;
+    text-decoration: none;
+    box-shadow: 2px 2px 15px grey;
     width: 40%;
     padding: 2%;
     border-radius: 10px;
@@ -125,6 +127,18 @@ main .authBtns {
 }
 
 main .authBtns:nth-child(1) {
+    background-color: transparent;
+    border: 1px solid #2b2bff;
+    color: #040494;
+}
+
+main .authBtns:hover {
+    background-color: #2b2bff;
+    border: none;
+    color: white;
+}
+
+main .authBtns:nth-child(2):hover {
     background-color: transparent;
     border: 1px solid #2b2bff;
     color: #040494;
