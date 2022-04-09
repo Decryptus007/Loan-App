@@ -7,7 +7,7 @@
 
 .loginUI {
     padding: 2%;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .headTitle {
@@ -41,7 +41,7 @@ main form {
     padding: 1%;
     padding-bottom: 3%;
     display: block;
-    margin: 5% auto;
+    margin: 3% auto;
     width: 50vw;
     border-radius: 15px;
     box-shadow: 2px 2px 15px grey;
@@ -98,7 +98,7 @@ main form button:hover {
 
 main .signUp {
     text-align: center;
-    font-size: large;
+    font-size: medium;
 }
 
 .signUp a {
