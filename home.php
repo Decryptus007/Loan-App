@@ -1,3 +1,15 @@
+<?php
+ob_start();
+
+ session_start();
+ include_once('../db_connect.php');
+ if (strlen($_SESSION['id']==0)) {
+  header('location:logout.php');
+  ob_end_flush();
+  } else{
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +31,20 @@
         <div class="header">
             <div class="nav">
                 <h1>Home</h1>
-                <p>Rukayat Adebimpe</p>
+          
+                <?php 
+                        // echo $_SESSION['email'];
+                        echo "welcome back user: ". $_SESSION['email'];
+
+                ?>
+                <a href="logout.php">
+                 Logout
+                 </a>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<?php  } ?>
