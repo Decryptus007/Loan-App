@@ -19,7 +19,7 @@
 
 .home .nav {
     color: white;
-    padding: 3% 2%;
+    padding: 2%;
     background: linear-gradient(to bottom, #5f8eca 65%, #4077c0);
     border-radius: 0 0 20px 20px;
     box-shadow: 0 2px 15px grey;
@@ -61,8 +61,47 @@
 }
 
 .cards .card {
+    padding: 2%;
     width: 40%;
     height: 250px;
     box-shadow: 2px 2px 15px grey;
     border-radius: 5px;
+    color: #4077c0;
+    background-image: url('../images/cardback.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+}
+
+.card .cardHead {
+    margin-top: 10%;
+    width: 100%;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.card .cardHead span {
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 5%;
+}
+
+.card .cardTail {
+    margin-top: 25%;
+}
+
+.cardTail small {
+    text-decoration: underline;
+    cursor: zoom-in;
+}
+
+.cardTail span {
+    cursor: pointer;
+    margin-left: 50%;
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+    padding: 2%;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f8ead0 10%, orange);
 }
