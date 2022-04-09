@@ -37,7 +37,7 @@ ob_start();
                     <a href="#"><p>Repayment</p></a>
                     <a href="#"><p>Settings</p></a>
                     <a href="#"><p>About</p></a>
-                    <a class="logOut" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                    <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
         </div>
