@@ -20,5 +20,5 @@ cancelApply.addEventListener('click', (e) => {
 
 calcBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    calcWindow.style.display = 'block'
+    // calcWindow.style.display = 'block'
 })

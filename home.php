@@ -7,6 +7,49 @@ ob_start();
   header('location:logout.php');
   ob_end_flush();
   } else{
+                // if(isset($_POST['result'])) {
+                // echo "good";
+                // $monthly = ($amount + ($amount * ($interest/100))) / $months;
+                // $penalty = $monthly * ($penalty/100);
+
+                // }
+                if(isset($_POST['submit'])) {
+                   
+                    {
+   
+                        $plan=$_POST['plan_id'];
+                        $type=$_POST['loan_type_id'];
+                        $purpose=$_POST['purpose'];
+                        $amount=$_POST['amount'];
+                        $status= 0;
+                        $borrowers = $_SESSION['id'];
+                        $data = 0;
+                                       
+                                        $ref_no = mt_rand(1,99999999);
+                                        $i= 1;
+
+                                            while($i== 1){
+                                                $check = mysqli_query($conn,"SELECT * FROM loan_list where ref_no ='$ref_no' ")->num_rows;
+                                                if($check > 0){
+                                                $ref_no = mt_rand(1,99999999);
+                                                }else{
+                                                    $i = 0;
+                                                }
+                                            }
+                                            $data .= " , ref_no = '$ref_no' ";
+                                        
+                                      
+                
+                                        $msg=mysqli_query($conn,"INSERT into loan_list(loan_type_id, borrower_id, purpose, amount, plan_id, status,ref_no) VALUES('$type','$borrowers','$purpose','$amount','$plan','$status','$ref_no')");
+                            
+                                    if($msg)
+                                    {
+                                        echo "<script>alert('Loan successfully submitted');</script>";
+                                        echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+                                    }
+                                }
+    
+                    }
     
 ?>
 
@@ -71,46 +114,66 @@ ob_start();
         <div class="overlay" id="overlay"></div>
         <div class="applyForm">
             <h2>Apply Loan Form</h2>
-            <form>
+            <form method="post">
+               
+                <?php
+				$plan = $conn->query("SELECT * FROM loan_plan  ");
+				?>
                 <label>
                     <span>Select Loan Plan:</span>
-                    <select>
-                        <option>1 year</option>
+                    <select name="plan_id" id="plan_id">
+                    <option value="">---</option>
+						<?php while($row = $plan->fetch_assoc()): ?>
+							<option value="<?php echo $row['id'] ?>" <?php echo isset($plan_id) && $plan_id == $row['id'] ? "selected" : '' ?> data-months="<?php echo $row['months'] ?>" data-interest_percentage="<?php echo $row['interest_percentage'] ?>" data-penalty_rate="<?php echo $row['penalty_rate'] ?>"><?php echo $row['months'] . ' month/s [ '.$row['interest_percentage'].'%, '.$row['penalty_rate'].'% ]' ?></option>
+						<?php endwhile; ?>
                     </select>
                     <small>months [ interest%,penalty% ]</small>
                 </label>
+
+                <?php
+				$type = $conn->query("SELECT * FROM loan_types ");
+				?>
                 <label>
                     <span>Select Loan Type:</span>
-                    <select>
-                        <option>Small Loan</option>
+                    <select name="loan_type_id" id="loan_plan_id">
+                    <option value="">---</option>
+						<?php while($row = $type->fetch_assoc()): ?>
+							<option value="<?php echo $row['id'] ?>" <?php echo isset($loan_type_id) && $loan_type_id == $row['id'] ? "selected" : '' ?>><?php echo $row['type_name'] ?></option>
+						<?php endwhile; ?>
                     </select>
                 </label>
+
                 <label>
                     <span>Purpose of Applying Loan:</span>
-                    <textarea placeholder="Type Here..."></textarea>
+                    <textarea name="purpose" id="" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
                 </label>
+
                 <label>
                     <span>Amount:</span>
-                    <input type="number" placeholder="Input Amount" />
+                    <input type="number" name="amount" placeholder="Input Amount"  value="<?php echo isset($amount) ? $amount : '' ?>">
+                    
                 </label>
-                <button id="calcBtn">Calculate</button>
+                <button type="submit"  name="result" id="calcBtn"> Calculate</button>
+
+                
 
                 <!-- CALCULATED WINDOW -->
                 <div id="calcWindow">
-                    <label>
-                        <span>Total Payable Amount:</span>
-                        <input type="number" disabled />
-                    </label>
-                    <label>
-                        <span>monthly Payable Amount:</span>
-                        <input type="number" disabled />
-                    </label>
-                    <label>
-                        <span>Penalty Amount:</span>
-                        <input type="number" disabled />
-                    </label>
+                    
+                        <label>
+                            <span>Total Payable Amount:</span>
+                            <input type="number" disabled value="<?php echo number_format($monthly * $months,2) ?>" />
+                        </label>
+                        <label>
+                            <span>monthly Payable Amount:</span>
+                            <input type="number" disabled value="<?php echo number_format($monthly,2) ?>" />
+                        </label>
+                        <label>
+                            <span>Penalty Amount:</span>
+                            <input type="number" disabled value="<?php echo number_format($penalty,2) ?>" />
+                        </label>
                     <div class="otherCalcBtns">
-                        <button>Submit</button>
+                        <button type="submit" name="submit" >Submit</button>
                         <button id="cancelApply">Cancel</button>
                     </div>
                 </div>
