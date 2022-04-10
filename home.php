@@ -75,6 +75,8 @@ ob_start();
 <body>
     <div class="home">
         <div class="header">
+            
+            <!-- DESKTOP NAV -->
             <div class="nav">
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
@@ -85,6 +87,12 @@ ob_start();
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
+
+            <!-- MOBILE NAV -->
+            <div class="mNav">
+                
+            </div>
+
         </div>
         <div class="pageUI">
         <div class="cards">
@@ -182,6 +190,11 @@ ob_start();
         </div>
     </div>
 
+    <!-- LOAN DETAILS -->
+    <div id="loanDetails" class="loanDetails">
+        <div class="overlay" id="overlayL"></div>
+        <div class="loanHolder">
+            <h2>Loan Details</h2>
     <!-- php loan details -->
         <?php
         $userid=$_SESSION['id'];
@@ -199,11 +212,6 @@ ob_start();
         
                 
         ?>
-    <!-- LOAN DETAILS -->
-    <div id="loanDetails" class="loanDetails">
-        <div class="overlay" id="overlayL"></div>
-        <div class="loanHolder">
-            <h2>Loan Details</h2>
             <div class="loanDetail">
                 <p>Name: <span> <?php echo $_SESSION['fname']; ?> </span></p>
                 <p>Reference No: <span>234567432</span></p>
@@ -214,9 +222,9 @@ ob_start();
                 <p>Date Released: <span>April 5th</span></p>
                 <p>Loan Status: <span>Pending</span></p>
             </div>
+        <?php }} ?>
         </div>
     </div>
-            <?php }} ?>
     <script src="./js/app.js"></script>
 </body>
 

@@ -159,3 +159,73 @@ main .authBtns:nth-child(2):hover {
     border: 1px solid #2b2bff;
     color: #040494;
 }
+
+@media (max-width: 425px) {
+    .loginUI {
+        margin-top: 10%;
+    }
+
+    .loginUI main {
+        width: 100%;
+    }
+
+    .headTitle h1 {
+        font-size: 2rem;
+        padding: 0;
+        margin-bottom: 1%;
+    }
+
+    .headTitle p {
+        font-size: .8rem;
+    }
+
+    .loginUI .signBtn {
+        margin-top: 20%;
+    }
+
+    main .authBtns {
+        width: 75%;
+        margin: 15% auto;
+        box-shadow: 1px 1px 5px grey;
+    }
+
+    main form {
+        margin-top: 5%;
+        width: 90vw;
+    }
+    
+    main form span {
+        font-size: medium;
+        margin-bottom: 1%;
+    }
+
+    main form label {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    main form input,
+    form label textarea {
+        display: block;
+        font-size: medium;
+        padding-left: 20%;
+        border: 1px solid #7eb5fc;
+        width: 100%;
+        border-radius: 10px;
+        height: 40px;
+    }
+
+    form label textarea {
+        height: 100px;
+        padding: 2%;
+    }
+
+    main form button {
+        margin-top: 15%;
+        padding: 3%;
+    }
+
+    main .signUp {
+        margin-top: 10%;
+    }
+}

@@ -85,6 +85,16 @@
     background: linear-gradient(to bottom, #97c2fd 5%, #1e76e9);
     cursor: pointer;
     transition: .3s;
+    animation: pop .5s;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.2, 1.2);
+    }
 }
 
 .applyForm button:disabled {

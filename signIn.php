@@ -45,7 +45,7 @@ echo "<script>alert('Invalid username or password');</script>";
             <h1>SunPaid Loan App</h1>
             <p>Online loan, as fast as 5 minutes</p>
         </section>
-        <main>
+        <main class="signBtn">
             <h2>Log In</h2>
             <form method="post" >
                 <label>
