@@ -4,6 +4,7 @@ ob_start();
  session_start();
  include_once('../db_connect.php');
  if (strlen($_SESSION['id']==0)) {
+    $_SESSION['id'];
   header('location:logout.php');
   ob_end_flush();
   } else{
@@ -181,13 +182,30 @@ ob_start();
         </div>
     </div>
 
+    <!-- php loan details -->
+        <?php
+        $userid=$_SESSION['id'];
+        $query=mysqli_query($conn,"SELECT * FROM borrowers WHERE id='$userid'");
+        while($result=mysqli_fetch_array($query))
+        {
+            $_SESSION['fname']= $result['firstname'];
+            $_SESSION['lname']= $result['lastname'];
+            $_SESSION['email']= $result['email'];
+
+            
+        
+                $qry = $conn->query("SELECT * FROM loan_list WHERE borrower_id = '$userid'");
+                    while($row = $type->fetch_assoc()){
+        
+                
+        ?>
     <!-- LOAN DETAILS -->
     <div id="loanDetails" class="loanDetails">
         <div class="overlay" id="overlayL"></div>
         <div class="loanHolder">
             <h2>Loan Details</h2>
             <div class="loanDetail">
-                <p>Name: <span>Opeyemi Afonja</span></p>
+                <p>Name: <span> <?php echo $_SESSION['fname']; ?> </span></p>
                 <p>Reference No: <span>234567432</span></p>
                 <p>Loan Type: <span>Personal Loan</span></p>
                 <p>Loan Plan: <span>27 months</span></p>
@@ -198,7 +216,7 @@ ob_start();
             </div>
         </div>
     </div>
-
+            <?php }} ?>
     <script src="./js/app.js"></script>
 </body>
 
