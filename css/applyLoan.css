@@ -84,6 +84,12 @@
     font-weight: 700;
     background: linear-gradient(to bottom, #97c2fd 5%, #1e76e9);
     cursor: pointer;
+    transition: .3s;
+}
+
+.applyForm button:disabled {
+    background: #c9c7c7;
+    cursor: not-allowed;
 }
 
 #calcWindow {
