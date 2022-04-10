@@ -77,10 +77,12 @@ ob_start();
         <div class="header">
             
             <!-- DESKTOP NAV -->
-            <div class="nav">
+            <div id="overlayS" class="overlay overlayS"></div>
+            <div id="nav" class="nav">
+                <h2 id="closeSide"><i class="fa-solid fa-xmark"></i></h2>
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
-                    <h2 class="pgName">Dashboard</h2>
+                    <a href="./home.php"><h2 class="pgName">Dashboard</h2></a>
                     <a href="#"><p>Repayment</p></a>
                     <a href="#"><p>Settings</p></a>
                     <a href="#"><p>About</p></a>
@@ -90,7 +92,10 @@ ob_start();
 
             <!-- MOBILE NAV -->
             <div class="mNav">
-                
+                <div class="mNavHead">
+                    <h2><span id="openSide"><i class="fa-solid fa-sliders"></i></span>Dashboard</h2>
+                    <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                </div>
             </div>
 
         </div>
