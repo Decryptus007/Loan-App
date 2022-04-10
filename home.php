@@ -2,7 +2,7 @@
 ob_start();
 
  session_start();
- include_once('../db_connect.php');
+ include_once('admin/db_connect.php');
  if (strlen($_SESSION['id']==0)) {
   
   header('location:logout.php');
@@ -103,7 +103,32 @@ ob_start();
         <div class="cards">
         <div class="card">
             <div class="cardHead">
-                <p>Loan Amount: <span>NGN 0</span></p>
+      <!--  start here for fetching the amount user borrow -->
+                    <?php
+
+
+            $userid = $_SESSION['id'];
+            $query=mysqli_query($conn,"SELECT * FROM borrowers WHERE id='$userid'");
+            while($result=mysqli_fetch_array($query))
+            {
+                $_SESSION['fname']= $result['firstname'];
+                $_SESSION['lname']= $result['lastname'];
+                $_SESSION['email']= $result['email'];
+
+            } 
+            $result = $conn->query("SELECT * FROM loan_list WHERE borrower_id = '$userid'");
+            //  $emparray = array();
+            $tamount = 0;
+            while($row =mysqli_fetch_assoc($result))
+            {    
+                $tamount+= $row['amount'];
+            }
+                    ?>
+                <p>Loan Amount: <span>
+
+                    N<?php echo $tamount;  ?>
+                </span></p>
+
             </div>
             <div class="cardTail">
                 <small id="showL">Loan Details</small>
@@ -271,7 +296,12 @@ ob_start();
                 </span></p>
             </div>
         <?php }       ?>
+        <div class="otherCalcBtnsView">
+                        <button type="submit" name="submit" >Submit</button>
+                        <button id="cancelApply">Cancel</button>
+                    </div>
         </div>
+        
     </div>
           
     <script src="./js/app.js"></script>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 // error_reporting(0);
-include_once('../db_connect.php');
+include_once('admin/db_connect.php');
 if(isset($_POST['login']))
 {
 $ret=mysqli_query($conn,"SELECT * FROM borrowers WHERE email='".$_POST['email']."' and password='".md5($_POST['password'])."'");
