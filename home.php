@@ -49,7 +49,7 @@ ob_start();
                 <p>Loan Amount: <span>NGN 0</span></p>
             </div>
             <div class="cardTail">
-                <small>Loan Details</small>
+                <small id="showL">Loan Details</small>
                 <span id="applyLoan" class="pay">Apply Loan</span>
             </div>
         </div>
@@ -121,7 +121,19 @@ ob_start();
     <!-- LOAN DETAILS -->
     <div id="loanDetails" class="loanDetails">
         <div class="overlay" id="overlayL"></div>
-
+        <div class="loanHolder">
+            <h2>Loan Details</h2>
+            <div class="loanDetail">
+                <p>Name: <span>Opeyemi Afonja</span></p>
+                <p>Reference No: <span>234567432</span></p>
+                <p>Loan Type: <span>Personal Loan</span></p>
+                <p>Loan Plan: <span>27 months</span></p>
+                <p>Loan Amount: <span>NGN 0</span></p>
+                <p>Loan Type: <span>Personal Loan</span></p>
+                <p>Date Released: <span>April 5th</span></p>
+                <p>Loan Status: <span>Pending</span></p>
+            </div>
+        </div>
     </div>
 
     <script src="./js/app.js"></script>

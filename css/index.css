@@ -63,11 +63,27 @@ main form input,
 form label textarea {
     display: block;
     font-size: large;
-    padding-left: 2%;
+    padding-left: 10%;
     border: 1px solid #7eb5fc;
     width: 100%;
     border-radius: 10px;
     height: 45px;
+}
+
+form .inputHolder {
+    position: relative;
+}
+
+.inputHolder .icon {
+    padding: 2%;
+    background-color: black;
+    border-radius: 10px 0 0 10px;
+    color: #7eb5fc;
+    position: absolute;
+    font-size: x-large;
+    font-weight: 700;
+    top: 3.5%;
+    left: 0;
 }
 
 main form a {
@@ -108,7 +124,7 @@ main .signUp {
 form label textarea {
     resize: none;
     height: 100px;
-    padding-top: 2%;
+    padding: 2%;
 }
 
 main .authBtns {

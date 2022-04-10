@@ -10,10 +10,6 @@
     transition: .3s;
 }
 
-.loanDetails {
-    transform: scale(1, 1);
-}
-
 .overlay {
     width: 100%;
     height: inherit;
@@ -21,7 +17,8 @@
     cursor: crosshair;
 }
 
-.applyLoan .applyForm {
+.applyLoan .applyForm,
+.loanDetails .loanHolder {
     top: 2%;
     left: 25%;
     position: absolute;
@@ -32,7 +29,8 @@
     width: 50%;
 }
 
-.applyForm h2 {
+.applyForm h2,
+.loanDetails h2 {
     text-align: center;
 }
 
@@ -104,4 +102,30 @@
     background: transparent;
     border: 1px solid #1e76e9;
     color: #1e76e9;
+}
+
+.loanDetails .loanHolder {
+    height: 75%;
+    overflow-y: auto;
+}
+
+.loanHolder .loanDetail {
+    width: 80%;
+    margin: 5% auto;
+    padding: 2%;
+    height: auto;
+    background-color: #88b9f893;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px grey;
+}
+
+.loanDetail p {
+    margin: 2% auto;
+    font-size: large;
+    border-bottom: 1px solid #4077c0;
+}
+
+.loanDetail p span {
+    margin-left: 3%;
+    font-weight: 700;
 }

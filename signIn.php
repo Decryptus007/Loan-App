@@ -34,6 +34,7 @@ echo "<script>alert('Invalid username or password');</script>";
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/index.css">
     <title>SunPaid</title>
 </head>
@@ -46,10 +47,23 @@ echo "<script>alert('Invalid username or password');</script>";
         </section>
         <main>
             <h2>Log In</h2>
-            <form onsubmit="() => alert('Hi')" method="post" >
-                <label><span>Email:</span><input type="email" placeholder="Input your Email" name="email" /></label>
+            <form method="post" >
+                <label>
+                    <span>Email:</span>
+                    <div class="inputHolder">
+                        <input type="email" placeholder="Input your Email" name="email" />
+                        <i class="icon fa-regular fa-envelope"></i>
+                    </div>
+                </label>
 
-                <label><span>Password:</span><input type="password" placeholder="Input your Password" name="password" /></label>
+
+                <label>
+                    <span>Password:</span>
+                    <div class="inputHolder">
+                        <input type="password" placeholder="Input your Password" name="password" />
+                        <i class="icon fa-solid fa-key"></i>
+                    </div>
+                </label>
 
                 <button type="submit" name="login">LOG IN </button>
 

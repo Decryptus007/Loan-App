@@ -1,10 +1,13 @@
 
 const dispApply = document.getElementById("applyLoan")
 const overlay = document.getElementById("overlay")
+const overlayL = document.getElementById("overlayL")
 const applyWindow = document.getElementById("windowLoan")
+const loanDetails = document.getElementById("loanDetails")
 const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
 const cancelApply = document.getElementById("cancelApply")
+const showL = document.getElementById("showL")
 
 dispApply.addEventListener('click', () => {
     applyWindow.style.transform = 'scale(1, 1)'
@@ -21,4 +24,11 @@ cancelApply.addEventListener('click', (e) => {
 calcBtn.addEventListener('click', (e) => {
     e.preventDefault()
     calcWindow.style.display = 'block'
+})
+
+showL.addEventListener('click', () => {
+    loanDetails.style.transform = 'scale(1, 1)'
+})
+overlayL.addEventListener('click', () => {
+    loanDetails.style.transform = 'scale(0, 0)'
 })
