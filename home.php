@@ -146,12 +146,12 @@ ob_start();
 
                 <label>
                     <span>Purpose of Applying Loan:</span>
-                    <textarea name="purpose" id="" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
+                    <textarea required name="purpose" id="" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
                 </label>
 
                 <label>
                     <span>Amount:</span>
-                    <input type="number" name="amount" placeholder="Input Amount"  value="<?php echo isset($amount) ? $amount : '' ?>">
+                    <input required type="number" name="amount" placeholder="Input Amount"  value="<?php echo isset($amount) ? $amount : '' ?>">
                     
                 </label>
                 <button type="submit"  name="result" id="calcBtn"> Calculate</button>

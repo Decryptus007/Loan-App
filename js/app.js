@@ -8,6 +8,8 @@ const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
 const cancelApply = document.getElementById("cancelApply")
 const showL = document.getElementById("showL")
+const loanPlan = document.getElementById("plan_id")
+const loanType = document.getElementById("loan_plan_id")
 
 dispApply.addEventListener('click', () => {
     applyWindow.style.transform = 'scale(1, 1)'
@@ -32,3 +34,15 @@ showL.addEventListener('click', () => {
 overlayL.addEventListener('click', () => {
     loanDetails.style.transform = 'scale(0, 0)'
 })
+
+calcBtn.disabled = true
+const valCheck = (param1, param2) => {
+    if (param1 === "" || param2 === "") {
+        calcBtn.disabled = true
+    } else {
+        calcBtn.disabled = false
+    }
+}
+
+loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value))
+loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value))
