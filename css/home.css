@@ -14,6 +14,10 @@ body {
     width: 100vw;
 }
 
+.home .mNav {
+    display: none;
+}
+
 .home .nav,
 .home .otherNavs {
     display: flex;
@@ -37,6 +41,11 @@ body {
 
 .nav h1 {
     width: 48%;
+}
+
+.nav h2 {
+    text-align: right;
+    display: none;
 }
 
 .nav .otherNavs {
@@ -120,8 +129,89 @@ body {
     background: linear-gradient(to bottom, #f8ead0 10%, orange);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .home {
         padding: 0;
+    }
+
+    .home .nav {
+        display: block;
+        transform: translateX(-100%);
+        top: 1px;
+        width: 80vw;
+        height: 100%;
+        left: 0;
+        position: absolute;
+    }
+
+    .nav .otherNavs {
+        height: 75vw;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .nav h1 {
+        display: none;
+    }
+
+    .nav h2 {
+        display: block;
+    }
+
+    .home .mNav {
+        display: block;
+        padding: 5% 2%;
+        background: linear-gradient(to bottom, #5f8eca 65%, #4077c0);
+        border-radius: 0 0 20px 20px;
+    }
+
+    .mNav .mNavHead {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mNavHead h2 {
+        width: 60%;
+    }
+
+    .mNavHead span {
+        margin-right: 5%;
+    }
+
+    .mNavHead a {
+        font-weight: 700;
+        padding: 2%;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .pageUI .cards {
+        flex-direction: column;
+    }
+
+    .cards .card {
+        width: 75%;
+        margin: 2% auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .cards .card {
+        width: 90%;
+    }
+
+    .cardTail span {
+        margin-left: 35%;
+    }
+
+    .card .cardHead {
+        font-size: medium;
+    }
+
+    .card .cardHead span {
+        font-size: 1.5rem;
     }
 }

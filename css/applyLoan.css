@@ -145,3 +145,31 @@
     margin-left: 3%;
     font-weight: 700;
 }
+
+@media (max-width: 768px) {
+    .overlayS {
+        height: 150%;
+        transform: translateX(-100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .applyLoan .applyForm,
+    .loanDetails .loanHolder {
+        width: 75%;
+        left: 12.5%;
+    }
+}
+
+@media (max-width: 425px) {
+    .applyLoan .applyForm,
+    .loanDetails .loanHolder {
+        width: 90%;
+        left: 5%;
+    }
+
+    .applyForm label {
+        width: 95%;
+    }
+}
