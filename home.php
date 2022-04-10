@@ -265,16 +265,10 @@ ob_start();
 						 		<?php endif; ?>
                 </span></p>
             </div>
-<<<<<<< HEAD
         <?php }       ?>
         </div>
     </div>
           
-=======
-        <?php }} ?>
-        </div>
-    </div>
->>>>>>> 882159c50407c5e045ac9d539c006fb1319cda33
     <script src="./js/app.js"></script>
 </body>
 
