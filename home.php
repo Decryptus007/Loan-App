@@ -75,6 +75,8 @@ ob_start();
 <body>
     <div class="home">
         <div class="header">
+            
+            <!-- DESKTOP NAV -->
             <div class="nav">
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
@@ -85,6 +87,12 @@ ob_start();
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
+
+            <!-- MOBILE NAV -->
+            <div class="mNav">
+                
+            </div>
+
         </div>
         <div class="pageUI">
         <div class="cards">
@@ -257,10 +265,16 @@ ob_start();
 						 		<?php endif; ?>
                 </span></p>
             </div>
+<<<<<<< HEAD
         <?php }       ?>
         </div>
     </div>
           
+=======
+        <?php }} ?>
+        </div>
+    </div>
+>>>>>>> 882159c50407c5e045ac9d539c006fb1319cda33
     <script src="./js/app.js"></script>
 </body>
 

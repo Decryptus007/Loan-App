@@ -20,7 +20,7 @@
             <h1>SunPaid Loan App</h1>
             <p>Online loan, as fast as 5 minutes</p>
         </section>
-        <main>
+        <main class="signBtn">
            <a class="authBtns" href="./signIn.php">Sign In</a>
            <a class="authBtns" href="./signUp.php">Sign Up</a>
         </main>
