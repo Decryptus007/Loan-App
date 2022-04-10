@@ -24,6 +24,7 @@ ob_start();
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
         <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="./css/applyLoan.css">
     <title>SunPaid</title>
 </head>
 
@@ -49,7 +50,7 @@ ob_start();
             </div>
             <div class="cardTail">
                 <small>Loan Details</small>
-                <span class="pay">Apply Loan</span>
+                <span id="applyLoan" class="pay">Apply Loan</span>
             </div>
         </div>
         <div class="card">
@@ -64,6 +65,66 @@ ob_start();
         </div>
         </div>
     </div>
+
+    <!-- APPLY LOAN FORM -->
+    <div id="windowLoan" class="applyLoan">
+        <div class="overlay" id="overlay"></div>
+        <div class="applyForm">
+            <h2>Apply Loan Form</h2>
+            <form>
+                <label>
+                    <span>Select Loan Plan:</span>
+                    <select>
+                        <option>1 year</option>
+                    </select>
+                    <small>months [ interest%,penalty% ]</small>
+                </label>
+                <label>
+                    <span>Select Loan Type:</span>
+                    <select>
+                        <option>Small Loan</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Purpose of Applying Loan:</span>
+                    <textarea placeholder="Type Here..."></textarea>
+                </label>
+                <label>
+                    <span>Amount:</span>
+                    <input type="number" placeholder="Input Amount" />
+                </label>
+                <button id="calcBtn">Calculate</button>
+
+                <!-- CALCULATED WINDOW -->
+                <div id="calcWindow">
+                    <label>
+                        <span>Total Payable Amount:</span>
+                        <input type="number" disabled />
+                    </label>
+                    <label>
+                        <span>monthly Payable Amount:</span>
+                        <input type="number" disabled />
+                    </label>
+                    <label>
+                        <span>Penalty Amount:</span>
+                        <input type="number" disabled />
+                    </label>
+                    <div class="otherCalcBtns">
+                        <button>Submit</button>
+                        <button id="cancelApply">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOAN DETAILS -->
+    <div id="loanDetails" class="loanDetails">
+        <div class="overlay" id="overlayL"></div>
+
+    </div>
+
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

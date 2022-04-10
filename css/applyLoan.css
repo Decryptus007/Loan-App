@@ -1,0 +1,107 @@
+
+.applyLoan,
+.loanDetails {
+    transform: scale(0, 0);
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 200%;
+    transition: .3s;
+}
+
+.loanDetails {
+    transform: scale(1, 1);
+}
+
+.overlay {
+    width: 100%;
+    height: inherit;
+    background-color: #00000080;
+    cursor: crosshair;
+}
+
+.applyLoan .applyForm {
+    top: 2%;
+    left: 25%;
+    position: absolute;
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+    width: 50%;
+}
+
+.applyForm h2 {
+    text-align: center;
+}
+
+.applyLoan form {
+    margin-top: 5%;
+    border: 1px solid #4077c0;
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+}
+
+.applyForm label {
+    width: 70%;
+    display: block;
+    padding: 1%;
+    margin: 3% auto;
+}
+
+.applyForm label span {
+    font-weight: 500;
+    font-size: large;
+}
+
+.applyForm select,
+.applyForm input,
+.applyForm textarea {
+    display: block;
+    width: 100%;
+    padding-left: 3%;
+    height: 35px;
+    border: 1px solid #5f8eca;
+    border-radius: 10px 10px 0 0;
+    margin-top: 2%;
+    font-size: medium;
+}
+
+.applyForm textarea {
+    height: 100px;
+    resize: none;
+    padding: 2%;
+}
+
+.applyForm button {
+    border: none;
+    padding: 2% 5%;
+    display: block;
+    margin: 2% auto;
+    border-radius: 10px;
+    color: white;
+    font-size: medium;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #97c2fd 5%, #1e76e9);
+    cursor: pointer;
+}
+
+#calcWindow {
+    display: none;
+}
+
+.applyForm .otherCalcBtns {
+    margin-top: 2%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.otherCalcBtns #cancelApply {
+    background: transparent;
+    border: 1px solid #1e76e9;
+    color: #1e76e9;
+}

@@ -5,6 +5,10 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+    position: relative;
+}
+
 .home {
     padding: 0 1%;
     width: 100vw;
@@ -61,6 +65,10 @@
 }
 
 .cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 2%;
     width: 40%;
     height: 250px;
@@ -74,7 +82,6 @@
 }
 
 .card .cardHead {
-    margin-top: 10%;
     width: 100%;
     font-size: x-large;
     font-weight: 700;
@@ -87,6 +94,7 @@
 }
 
 .card .cardTail {
+    width: 100%;
     margin-top: 20%;
 }
 
