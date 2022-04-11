@@ -29,11 +29,11 @@ const closeLoanD = document.getElementById("closeLoanD")
 const calc = () => {
     let totalAmount
     if (loanPlan.value == 1) {
-        totalAmount = ((amount.value * 8 * 3) / 100)
+        totalAmount = ((amount.value / 100) * 8)
     } else if (loanPlan.value == 2) {
-        totalAmount = ((amount.value * 5 * 2) / 100)
+        totalAmount = ((amount.value / 100) * 5)
     } else if (loanPlan.value == 3) {
-        totalAmount = ((amount.value * 6 * 2.3) / 100)
+        totalAmount = ((amount.value / 100) * 6)
     }
 
     totalAmount += parseInt(amount.value)
