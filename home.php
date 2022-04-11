@@ -80,7 +80,7 @@ ob_start();
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
                     <a href="./home.php"><h2 class="pgName">Dashboard</h2></a>
-                    <a href="#"><p>Repayment</p></a>
+                    <a href="./repayment.html"><p>Repayment</p></a>
                     <a href="#"><p>Settings</p></a>
                     <a href="#"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -90,7 +90,8 @@ ob_start();
             <!-- MOBILE NAV -->
             <div class="mNav">
                 <div class="mNavHead">
-                    <h2><span id="openSide"><i class="fa-solid fa-sliders"></i></span>Dashboard</h2>
+                    <span id="openSide"><i class="fa-solid fa-sliders"></i></span>
+                    <h2>SunPaid</h2>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -124,7 +125,11 @@ ob_start();
                 <p>Loan Amount: <span>
       <!--  ends here for fetching the amount user borrow -->
 
+<<<<<<< HEAD
                     N<?php echo $tamount. ' : 00';  ?>
+=======
+                    <?php echo $tamount;  ?>
+>>>>>>> b57c9189a219322674854138f1bc60ed47d57a9b
                 </span></p>
 
             </div>
@@ -139,7 +144,7 @@ ob_start();
             </div>
             <div class="cardTail">
                 <small>Repayment Details</small>
-                <span class="pay">Pay Now</span>
+                <a href="./repayment.html"><span class="pay">Pay Now</span></a>
             </div>
         </div>
         </div>
@@ -182,26 +187,30 @@ ob_start();
 
                 <label>
                     <span>Purpose of Applying Loan:</span>
-                    <textarea required name="purpose" id="" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
+                    <textarea id="purpose" required name="purpose" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
                 </label>
 
                 <label>
                     <span>Amount:</span>
-                    <input required type="number" name="amount" placeholder="Input Amount"  value="<?php echo isset($amount) ? $amount : '' ?>">
+                    <input id="amount" required type="number" name="amount" placeholder="Input Amount"  value=""<?php echo isset($amount) ? $amount : '' ?>">
                     
                 </label>
                 <button type="submit"  name="result" id="calcBtn"> Calculate</button>
 
+<<<<<<< HEAD
                 
                 <!--  php start calculation of loan Payable -->
              
 
                 <!--  php end calculation of loan Payable -->
+=======
+>>>>>>> b57c9189a219322674854138f1bc60ed47d57a9b
                 <!-- CALCULATED WINDOW -->
                 <div id="calcWindow">
                     
                         <label>
                             <span>Total Payable Amount:</span>
+<<<<<<< HEAD
                             <input type="number" name ="tpa"  disabled value="" />
                         </label>
                         <label>
@@ -211,6 +220,17 @@ ob_start();
                         <label>
                             <span>Penalty Amount:</span>
                             <input type="number" name="pa" disabled value="" />
+=======
+                            <input id="totalAmt" type="number" disabled value=""<?php echo number_format($monthly * $months,2) ?>" />
+                        </label>
+                        <label>
+                            <span>monthly Payable Amount:</span>
+                            <input id="mnthlyAmt" type="number" disabled value=""<?php echo number_format($monthly,2) ?>" />
+                        </label>
+                        <label>
+                            <span>Penalty Amount:</span>
+                            <input id="penAmt" type="number" disabled value=""<?php echo number_format($penalty,2) ?>" />
+>>>>>>> b57c9189a219322674854138f1bc60ed47d57a9b
                         </label>
                     <div class="otherCalcBtns">
                         <button type="submit" name="submit" >Submit</button>
@@ -297,11 +317,9 @@ ob_start();
                 </span></p>
             </div>
         <?php }       ?>
-        <div class="otherCalcBtnsView">
-                        <button type="submit" name="submit" >Submit</button>
-                        <button id="cancelApply">Cancel</button>
-                    </div>
-        </div>
+       <button id="closeLoanD" class="closeLoanD">
+            Close
+        </button>
         
     </div>
           
