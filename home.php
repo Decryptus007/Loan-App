@@ -203,15 +203,15 @@ ob_start();
                     
                         <label>
                             <span>Total Payable Amount:</span>
-                            <input type="number" name ="tpa"  disabled value="" />
+                            <input id="totalAmt" type="number" name ="tpa"  disabled value="" />
                         </label>
                         <label>
                             <span>monthly Payable Amount:</span>
-                            <input type="number" name="mpa" disabled value="" />
+                            <input id="mnthlyAmt" type="number" name="mpa" disabled value="" />
                         </label>
                         <label>
                             <span>Penalty Amount:</span>
-                            <input type="number" name="pa" disabled value="" />
+                            <input id="penAmt" type="number" name="pa" disabled value="" />
                         </label>
                     <div class="otherCalcBtns">
                         <button type="submit" name="submit" >Submit</button>
