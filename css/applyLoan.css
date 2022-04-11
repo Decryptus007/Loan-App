@@ -85,16 +85,6 @@
     background: linear-gradient(to bottom, #97c2fd 5%, #1e76e9);
     cursor: pointer;
     transition: .3s;
-    animation: pop .5s;
-}
-
-@keyframes pop {
-    from {
-        transform: scale(1, 1);
-    }
-    to {
-        transform: scale(1.2, 1.2);
-    }
 }
 
 .applyForm button:disabled {
@@ -103,7 +93,7 @@
 }
 
 #calcWindow {
-    display: block;
+    display: none;
 }
 
 .applyForm .otherCalcBtns {
@@ -126,24 +116,57 @@
 }
 
 .loanHolder .loanDetail {
-    width: 80%;
+    width: 95%;
     margin: 5% auto;
     padding: 2%;
     height: auto;
-    background-color: #88b9f893;
+    /* background-color: #e2efffe0; */
     border-radius: 10px;
-    box-shadow: 2px 2px 15px grey;
+    box-shadow: inset 2px 2px 15px grey;
 }
 
 .loanDetail p {
     margin: 2% auto;
     font-size: large;
     border-bottom: 1px solid #4077c0;
+    padding-bottom: 2%;
 }
 
 .loanDetail p span {
     margin-left: 3%;
     font-weight: 700;
+    padding: 2%;
+}
+
+.badge {
+    font-size: small;
+}
+
+.badge-warning {
+    background-color: yellow;
+}
+.badge-info {
+    background-color: teal;
+}
+.badge-primary {
+    background-color: blue;
+}
+.badge-success {
+    background-color: green;
+}
+.badge-danger {
+    background-color: red;
+}
+
+.closeLoanD {
+    display: block;
+    padding: 3% 5%;
+    border-radius: 10px;
+    font-weight: 500;
+    margin: 5% auto;
+    color: black;
+    border: 1px solid #5f8eca;
+    box-shadow: inset 1px 1px 8px grey;
 }
 
 @media (max-width: 768px) {

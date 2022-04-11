@@ -11,11 +11,77 @@ const cancelApply = document.getElementById("cancelApply")
 const showL = document.getElementById("showL")
 const loanPlan = document.getElementById("plan_id")
 const loanType = document.getElementById("loan_plan_id")
+const purpose = document.getElementById("purpose")
+const amount = document.getElementById("amount")
+
+const totalAmt = document.getElementById("totalAmt")
+const mnthlyAmt = document.getElementById("mnthlyAmt")
+const penAmt = document.getElementById("penAmt")
 
 const overlaySide = document.getElementById("overlayS")
 const closeSide = document.getElementById("closeSide")
 const openSide = document.getElementById("openSide")
 const nav = document.getElementById("nav")
+
+const closeLoanD = document.getElementById("closeLoanD")
+
+
+const calc = () => {
+    let totalAmount
+    if (loanPlan.value == 1) {
+        totalAmount = ((amount.value * 8 * 3) / 100)
+    } else if (loanPlan.value == 2) {
+        totalAmount = ((amount.value * 5 * 2) / 100)
+    } else if (loanPlan.value == 3) {
+        totalAmount = ((amount.value * 6 * 2.3) / 100)
+    }
+
+    totalAmount += parseInt(amount.value)
+    totalAmt.value = totalAmount
+
+    let penAmtHolder
+
+    if (loanPlan.value == 1) {
+        mnthlyAmt.value = (totalAmount / 36).toFixed(2)
+        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 3)
+        penAmt.value = penAmtHolder.toFixed(2)
+    } else if (loanPlan.value == 2) {
+        mnthlyAmt.value = (totalAmount / 24).toFixed(2)
+        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 2)
+        penAmt.value = penAmtHolder.toFixed(2)
+    } else if (loanPlan.value == 3) {
+        mnthlyAmt.value = (totalAmount / 27).toFixed(2)
+        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 2)
+        penAmt.value = penAmtHolder.toFixed(2)
+    }
+}
+
+const valCheck = (param1, param2, param3, param4) => {
+    if (param1 === "" || param2 === "" || param3 === "" || param4 === "") {
+        calcBtn.disabled = true
+    } else {
+        calcBtn.disabled = false
+    }
+}
+
+openSide.addEventListener('click', () => {
+    overlaySide.style.transform = 'translateX(0)'
+    nav.style.transform = 'translateX(0)'
+})
+
+closeSide.addEventListener('click', () => {
+    overlaySide.style.transform = 'translateX(-100%)'
+    nav.style.transform = 'translateX(-100%)'
+})
+overlaySide.addEventListener('click', () => {
+    overlaySide.style.transform = 'translateX(-100%)'
+    nav.style.transform = 'translateX(-100%)'
+})
+
+loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value, purpose.value, amount.value))
+loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
+purpose.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
+amount.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
 
 dispApply.addEventListener('click', () => {
     applyWindow.style.transform = 'scale(1, 1)'
@@ -32,6 +98,7 @@ cancelApply.addEventListener('click', (e) => {
 calcBtn.addEventListener('click', (e) => {
     e.preventDefault()
     calcWindow.style.display = 'block'
+    calc()
 })
 
 showL.addEventListener('click', () => {
@@ -40,29 +107,8 @@ showL.addEventListener('click', () => {
 overlayL.addEventListener('click', () => {
     loanDetails.style.transform = 'scale(0, 0)'
 })
+closeLoanD.addEventListener('click', () => {
+    loanDetails.style.transform = 'scale(0, 0)'
+})
 
 calcBtn.disabled = true
-const valCheck = (param1, param2) => {
-    if (param1 === "" || param2 === "") {
-        calcBtn.disabled = true
-    } else {
-        calcBtn.disabled = false
-    }
-}
-
-loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value))
-loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value))
-
-openSide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(0)'
-    nav.style.transform = 'translateX(0)'
-})
-
-closeSide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
-overlaySide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
