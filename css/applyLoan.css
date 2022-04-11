@@ -171,11 +171,12 @@
 
 @media (max-width: 768px) {
     .overlayS {
-        height: 150%;
+        height: 100%;
         transform: translateX(-100%);
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
     }
 
     .applyLoan .applyForm,
