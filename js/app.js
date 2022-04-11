@@ -37,7 +37,7 @@ const calc = () => {
     }
 
     totalAmount += parseInt(amount.value)
-    totalAmt.value = totalAmount
+    totalAmt.value = totalAmount.toFixed(2)
 
     let penAmtHolder
 
