@@ -43,15 +43,15 @@ const calc = () => {
 
     if (loanPlan.value == 1) {
         mnthlyAmt.value = (totalAmount / 36).toFixed(2)
-        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 3)
+        penAmtHolder = parseFloat((mnthlyAmt.value / 100) * 3)
         penAmt.value = penAmtHolder.toFixed(2)
     } else if (loanPlan.value == 2) {
         mnthlyAmt.value = (totalAmount / 24).toFixed(2)
-        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 2)
+        penAmtHolder = parseFloat((mnthlyAmt.value / 100) * 2)
         penAmt.value = penAmtHolder.toFixed(2)
     } else if (loanPlan.value == 3) {
         mnthlyAmt.value = (totalAmount / 27).toFixed(2)
-        penAmtHolder = parseFloat(mnthlyAmt.value) + ((mnthlyAmt.value / 100) * 2)
+        penAmtHolder = parseFloat((mnthlyAmt.value / 100) * 2)
         penAmt.value = penAmtHolder.toFixed(2)
     }
 }
