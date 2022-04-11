@@ -8,12 +8,6 @@ ob_start();
   header('location:logout.php');
   ob_end_flush();
   } else{
-                // if(isset($_POST['result'])) {
-                // echo "good";
-                // $monthly = ($amount + ($amount * ($interest/100))) / $months;
-                // $penalty = $monthly * ($penalty/100);
-
-                // }
                 if(isset($_POST['submit'])) {
                    
                     {
@@ -126,6 +120,7 @@ ob_start();
             }
                     ?>
                 <p>Loan Amount: <span>
+      <!--  ends here for fetching the amount user borrow -->
 
                     <?php echo $tamount;  ?>
                 </span></p>
