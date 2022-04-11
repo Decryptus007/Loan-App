@@ -78,6 +78,16 @@ overlaySide.addEventListener('click', () => {
     nav.style.transform = 'translateX(-100%)'
 })
 
+closeSide.addEventListener('click', () => {
+    overlaySide.style.transform = 'translateX(-100%)'
+    nav.style.transform = 'translateX(-100%)'
+})
+overlaySide.addEventListener('click', () => {
+    overlaySide.style.transform = 'translateX(-100%)'
+    nav.style.transform = 'translateX(-100%)'
+})
+
+
 loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value, purpose.value, amount.value))
 loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
 purpose.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
@@ -110,14 +120,4 @@ overlayL.addEventListener('click', () => {
 closeLoanD.addEventListener('click', () => {
     loanDetails.style.transform = 'scale(0, 0)'
 })
-
-closeSide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
-overlaySide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
-
 
