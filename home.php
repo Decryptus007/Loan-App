@@ -125,7 +125,7 @@ ob_start();
                 <p>Loan Amount: <span>
       <!--  ends here for fetching the amount user borrow -->
 
-                    <?php echo $tamount;  ?>
+                    N<?php echo $tamount. ' : 00';  ?>
                 </span></p>
 
             </div>
@@ -193,20 +193,25 @@ ob_start();
                 </label>
                 <button type="submit"  name="result" id="calcBtn"> Calculate</button>
 
+                
+                <!--  php start calculation of loan Payable -->
+             
+
+                <!--  php end calculation of loan Payable -->
                 <!-- CALCULATED WINDOW -->
                 <div id="calcWindow">
                     
                         <label>
                             <span>Total Payable Amount:</span>
-                            <input id="totalAmt" type="number" disabled value=""<?php echo number_format($monthly * $months,2) ?>" />
+                            <input type="number" name ="tpa"  disabled value="" />
                         </label>
                         <label>
                             <span>monthly Payable Amount:</span>
-                            <input id="mnthlyAmt" type="number" disabled value=""<?php echo number_format($monthly,2) ?>" />
+                            <input type="number" name="mpa" disabled value="" />
                         </label>
                         <label>
                             <span>Penalty Amount:</span>
-                            <input id="penAmt" type="number" disabled value=""<?php echo number_format($penalty,2) ?>" />
+                            <input type="number" name="pa" disabled value="" />
                         </label>
                     <div class="otherCalcBtns">
                         <button type="submit" name="submit" >Submit</button>
