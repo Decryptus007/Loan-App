@@ -111,17 +111,4 @@ closeLoanD.addEventListener('click', () => {
     loanDetails.style.transform = 'scale(0, 0)'
 })
 
-<<<<<<< HEAD
-closeSide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
-overlaySide.addEventListener('click', () => {
-    overlaySide.style.transform = 'translateX(-100%)'
-    nav.style.transform = 'translateX(-100%)'
-})
-
-
-=======
 calcBtn.disabled = true
->>>>>>> b57c9189a219322674854138f1bc60ed47d57a9b
