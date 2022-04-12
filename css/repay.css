@@ -108,19 +108,65 @@ body {
 }
 
 #repays .viewRepayment {
+    position: relative;
     width: 50%;
     height: 200px;
     margin: 3% auto;
-    padding: 2%;
-    background-image: url('../images/paying.jpg'), linear-gradient(to bottom right, #94bef5 20%, #112d52);
-    background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: cover;
-    box-shadow: inset 2px 2px 15px #5f8eca;
-    box-shadow: 2px 2px 15px black;
-    border-radius: 10px;
+    display: flex;
+    font-size: large;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 2%;/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.7px);
+    -webkit-backdrop-filter: blur(10.7px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
 }
 
+.viewRepayment a {
+    position: absolute;
+    font-size: medium;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    box-shadow: 2px 2px 15px #00000096;
+    bottom: 5%;
+    right: 2%;
+    padding: 2%;
+    text-shadow: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f3cb80 5%, #ffa600);
+    transition: .3s;
+    animation: pop 1s infinite;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(1.0, 1.0);
+    }
+    to {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.viewRepayment a:hover {
+    box-shadow: none;
+    animation: none;
+}
+
+.viewRepayment div span {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.viewRepayment #repayDtl {
+    font-weight: 500;
+    font-size: medium;
+}
 
 
 
@@ -137,9 +183,16 @@ body {
     }
 
     .repayCard {
-        margin: 10% auto;
+        margin: 50% auto 0;
         width: 98%;
         height: 30%;
     }
-    
+
+    #trick {
+        margin-top: 30%;
+    }
+
+    #repays .viewRepayment {
+        width: 90%;
+    }
 }

@@ -81,7 +81,7 @@ ob_start();
                 <div class="otherNavs">
                     <a href="./home.php"><h2 class="pgName">Dashboard</h2></a>
                     <a href="./repayment.html"><p>Repayment</p></a>
-                    <a href="#"><p>Settings</p></a>
+                    <a href="./settings.html"><p>Settings</p></a>
                     <a href="#"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
