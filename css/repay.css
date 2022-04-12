@@ -1,8 +1,11 @@
+body {
+    background: none;
+}
 
 .repayUI {
     position: relative;
     background-color: #5f8eca;
-    height: 85vh;
+    height: 80vh;
 }
 
 .custom-shape-divider-top-1649706673 {
@@ -25,10 +28,118 @@
     fill: #FFFFFF;
 }
 
+.repayUI .repayMain {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1%;
+    background-image: url('../images/repay.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+}
+
+.repayCard {
+    margin: 5% auto;
+    width: 49%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.repayCard {
+    padding: 1%;
+    background: linear-gradient(to bottom, #f8ead0 10%, orange);
+    box-shadow: 2px 2px 15px black;
+    background-image: url('../images/repayBg.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.repayCard h2 {
+    color: black;
+    text-shadow: none;
+    font-size: xx-large;
+}
+
+.repayCard a {
+    color: inherit;
+}
+
+#repays {
+    margin: 5% auto;
+    padding: 1%;
+    position: relative;
+    background-image: url('../images/reyDetails.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+}
+
+.custom-shape-divider-top-1649722736 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1649722736 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 83px;
+}
+
+.custom-shape-divider-top-1649722736 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#trick {
+    margin-top: 15%;
+}
+
+#repays .viewRepayment {
+    width: 50%;
+    height: 200px;
+    margin: 3% auto;
+    padding: 2%;
+    background-image: url('../images/paying.jpg'), linear-gradient(to bottom right, #94bef5 20%, #112d52);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    box-shadow: inset 2px 2px 15px #5f8eca;
+    box-shadow: 2px 2px 15px black;
+    border-radius: 10px;
+}
+
+
+
+
+
 /** For mobile devices **/
 @media (max-width: 767px) {
     .custom-shape-divider-top-1649706673 svg {
         width: calc(100% + 1.3px);
         height: 22px;
     }
+
+    .repayUI .repayMain {
+        align-items: flex-start;
+    }
+
+    .repayCard {
+        margin: 10% auto;
+        width: 98%;
+        height: 30%;
+    }
+    
 }

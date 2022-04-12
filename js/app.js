@@ -105,6 +105,7 @@ cancelApply.addEventListener('click', (e) => {
     e.preventDefault()
 })
 
+calcBtn.disabled = true
 calcBtn.addEventListener('click', (e) => {
     e.preventDefault()
     calcWindow.style.display = 'block'

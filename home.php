@@ -125,7 +125,7 @@ ob_start();
                 <p>Loan Amount: <span>
       <!--  ends here for fetching the amount user borrow -->
 
-                    N<?php echo $tamount. ' : 00';  ?>
+            ₦<?php echo $tamount. ' : 00';  ?>
                 </span></p>
 
             </div>
@@ -136,7 +136,7 @@ ob_start();
         </div>
         <div class="card">
             <div class="cardHead">
-                <p>Repayable Amount: <span>NGN 0</span></p>
+                <p>Repayable Amount: <span>₦ 0</span></p>
             </div>
             <div class="cardTail">
                 <small>Repayment Details</small>
