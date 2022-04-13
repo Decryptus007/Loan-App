@@ -83,28 +83,29 @@ body {
     background-size: cover;
 }
 
-.custom-shape-divider-top-1649722736 {
+.custom-shape-divider-top-1649809915 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    transform: rotate(180deg);
 }
 
-.custom-shape-divider-top-1649722736 svg {
+.custom-shape-divider-top-1649809915 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 83px;
+    height: 46px;
 }
 
-.custom-shape-divider-top-1649722736 .shape-fill {
+.custom-shape-divider-top-1649809915 .shape-fill {
     fill: #FFFFFF;
 }
 
 #trick {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 #repays .viewRepayment {
@@ -163,7 +164,7 @@ body {
     font-weight: 700;
 }
 
-.viewRepayment #repayDtl {
+.viewRepayment .repayDtl {
     font-weight: 500;
     font-size: medium;
 }
@@ -178,14 +179,19 @@ body {
         height: 22px;
     }
 
+    .repayUI {
+        height: 40%;
+    }
+
     .repayUI .repayMain {
         align-items: flex-start;
+        height: 100%;
     }
 
     .repayCard {
-        margin: 50% auto 0;
+        margin-top: 10%;
         width: 98%;
-        height: 30%;
+        height: 80%;
     }
 
     #trick {
