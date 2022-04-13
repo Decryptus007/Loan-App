@@ -28,7 +28,7 @@
                     <a href="./home.php"><p>Dashboard</p></a>
                     <a href="./repayment.html"><p>Repayment</p></a>
                     <a href="./repayment.html"><h2 class="pgName">Settings</h2></a>
-                    <a href="#"><p>About</p></a>
+                    <a href="./about.html"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -44,11 +44,57 @@
 
         </div>
         <div class="settingUI">
-            <div>Change/Update Name</div>
-            <div>Change/Update Email Address</div>
-            <div>Change Password</div>
+            <div id="updateEmail"><i class="icon fa-regular fa-envelope"></i>Change/Update Email Address</div>
+            <div id="updateName"><i class="icon fa-solid fa-person"></i>Change/Update Name</div>
+            <div id="updatePass"><i class="icon fa-solid fa-key"></i>Change Password</div>
+        </div>
+
+        <div id="upForm" class="upForm">
+            <div class="overlay" id="overlayEmail"></div>
+            <form class="popForm">
+                <label>
+                    <span>Current Email</span>
+                    <input type="email" placeholder="your current email">
+                </label>
+                <label>
+                    <span>New Email</span>
+                    <input type="email" placeholder="your new email">
+                </label>
+                <button>Update Email</button>
+            </form>
+        </div>
+
+        <div id="upName" class="upForm">
+            <div class="overlay" id="overlayName"></div>
+            <form class="popForm">
+                <label>
+                    <span>Current Name</span>
+                    <input type="text" placeholder="your current name">
+                </label>
+                <label>
+                    <span>New Name</span>
+                    <input type="text" placeholder="your new name">
+                </label>
+                <button>Update Data</button>
+            </form>
+        </div>
+
+        <div id="upPass" class="upForm">
+            <div class="overlay" id="overlayPass"></div>
+            <form class="popForm">
+                <label>
+                    <span>Current Password</span>
+                    <input type="password" placeholder="your current Password">
+                </label>
+                <label>
+                    <span>New Email</span>
+                    <input type="password" placeholder="your new Password">
+                </label>
+                <button>Update Password</button>
+            </form>
         </div>
     </div>
     <script src="./js/sideBar.js"></script>
+    <script src="./js/settings.js"></script>
 </body>
 </html>
