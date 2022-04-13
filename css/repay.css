@@ -83,44 +83,91 @@ body {
     background-size: cover;
 }
 
-.custom-shape-divider-top-1649722736 {
+.custom-shape-divider-top-1649809915 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    transform: rotate(180deg);
 }
 
-.custom-shape-divider-top-1649722736 svg {
+.custom-shape-divider-top-1649809915 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 83px;
+    height: 46px;
 }
 
-.custom-shape-divider-top-1649722736 .shape-fill {
+.custom-shape-divider-top-1649809915 .shape-fill {
     fill: #FFFFFF;
 }
 
 #trick {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 #repays .viewRepayment {
+    position: relative;
     width: 50%;
     height: 200px;
     margin: 3% auto;
-    padding: 2%;
-    background-image: url('../images/paying.jpg'), linear-gradient(to bottom right, #94bef5 20%, #112d52);
-    background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: cover;
-    box-shadow: inset 2px 2px 15px #5f8eca;
-    box-shadow: 2px 2px 15px black;
-    border-radius: 10px;
+    display: flex;
+    font-size: large;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 2%;/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.7px);
+    -webkit-backdrop-filter: blur(10.7px);
+    border: 1px solid rgba(255, 255, 255, 0.85);
 }
 
+.viewRepayment a {
+    position: absolute;
+    font-size: medium;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    box-shadow: 2px 2px 15px #00000096;
+    bottom: 5%;
+    right: 2%;
+    padding: 2%;
+    text-shadow: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f3cb80 5%, #ffa600);
+    transition: .3s;
+    animation: pop 1s infinite;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(1.0, 1.0);
+    }
+    to {
+        transform: scale(1.02, 1.02);
+    }
+}
+
+.viewRepayment a:hover {
+    box-shadow: none;
+    animation: none;
+}
+
+.viewRepayment div span {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.viewRepayment .repayDtl {
+    font-weight: 500;
+    font-size: medium;
+}
 
 
 
@@ -132,14 +179,26 @@ body {
         height: 22px;
     }
 
+    .repayUI {
+        height: 40%;
+    }
+
     .repayUI .repayMain {
         align-items: flex-start;
+        height: 100%;
     }
 
     .repayCard {
-        margin: 10% auto;
+        margin-top: 10%;
         width: 98%;
-        height: 30%;
+        height: 80%;
     }
-    
+
+    #trick {
+        margin-top: 30%;
+    }
+
+    #repays .viewRepayment {
+        width: 90%;
+    }
 }
