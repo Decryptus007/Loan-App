@@ -29,7 +29,7 @@ $password = mysqli_real_escape_string($conn, $password);
         if($row>0){
         echo "<script>alert('Email id already exist with another account. Please try with other email id');</script>";
             } else{
-                $msg=mysqli_query($conn,"INSERT into borrowers(firstname,middlename,lastname,contact_no,address,email,password,tax_id) VALUES('$fname','$mname','$lname','$phone','$address','$email','$password','$nin')");
+                $msg=mysqli_query($conn,"INSERT into borrowers(firstname,middlename,lastname,contact_no,address,email,password,nin_id) VALUES('$fname','$mname','$lname','$phone','$address','$email','$password','$nin')");
     
             if($msg)
             {

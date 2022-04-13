@@ -68,12 +68,19 @@
 						 	</td>
 						 	<td>
 						 		<p>Reference :<b><?php echo $row['ref_no'] ?></b></p>
+
 						 		<p><small>Loan type :<b><?php echo $type_arr[$row['loan_type_id']] ?></small></b></p>
+
 						 		<p><small>Plan :<b><?php echo $plan_arr[$row['plan_id']]['plan'] ?></small></b></p>
+
 						 		<p><small>Amount :<b><?php echo $row['amount'] ?></small></b></p>
+
 						 		<p><small>Total Payable Amount :<b><?php echo number_format($monthly * $plan_arr[$row['plan_id']]['months'],2) ?></small></b></p>
+
 						 		<p><small>Monthly Payable Amount: <b><?php echo number_format($monthly,2) ?></small></b></p>
+
 						 		<p><small>Overdue Payable Amount: <b><?php echo number_format($penalty,2) ?></small></b></p>
+								 
 						 		<?php if($row['status'] == 2 || $row['status'] == 3): ?>
 						 		<p><small>Date Released: <b><?php echo date("M d, Y",strtotime($row['date_released'])) ?></small></b></p>
 						 		<?php endif; ?>

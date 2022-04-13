@@ -80,9 +80,9 @@ ob_start();
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
                     <a href="./home.php"><h2 class="pgName">Dashboard</h2></a>
-                    <a href="./repayment.html"><p>Repayment</p></a>
-                    <a href="./settings.html"><p>Settings</p></a>
-                    <a href="./about.html"><p>About</p></a>
+                    <a href="./repayment.php"><p>Repayment</p></a>
+                    <a href="./settings.php"><p>Settings</p></a>
+                    <a href="./about.php"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -136,11 +136,11 @@ ob_start();
         </div>
         <div class="card">
             <div class="cardHead">
-                <p>Repayable Amount: <span>₦ 0</span></p>
+                <p>Repayable Amount: <span>₦ 50000</span></p>
             </div>
             <div class="cardTail">
                 <small>Repayment Details</small>
-                <a href="./repayment.html"><span class="pay">Pay Now</span></a>
+                <a href="./repayment.php"><span class="pay">Pay Now</span></a>
             </div>
         </div>
         </div>
@@ -194,10 +194,6 @@ ob_start();
                 <button type="submit"  name="result" id="calcBtn"> Calculate</button>
 
                 
-                <!--  php start calculation of loan Payable -->
-             
-
-                <!--  php end calculation of loan Payable -->
                 <!-- CALCULATED WINDOW -->
                 <div id="calcWindow">
                     

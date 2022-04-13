@@ -1,3 +1,15 @@
+<?php
+ob_start();
+
+ session_start();
+ include_once('admin/db_connect.php');
+ if (strlen($_SESSION['id']==0)) {
+  
+  header('location:logout.php');
+  ob_end_flush();
+  } else{
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,9 +38,9 @@
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
                     <a href="./home.php"><p>Dashboard</p></a>
-                    <a href="./repayment.html"><p>Repayment</p></a>
-                    <a href="./settings.html"><p>Settings</p></a>
-                    <a href="./about.html"><h2 class="pgName">About</h2></a>
+                    <a href="./repayment.php"><p>Repayment</p></a>
+                    <a href="./settings.php"><p>Settings</p></a>
+                    <a href="./about.php"><h2 class="pgName">About</h2></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -69,3 +81,5 @@
     <script src="./js/sideBar.js"></script>
 </body>
 </html>
+
+<?php }?>

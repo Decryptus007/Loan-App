@@ -175,7 +175,7 @@ Class Action {
 		$data .= ", address = '$address' ";
 		$data .= ", contact_no = '$contact_no' ";
 		$data .= ", email = '$email' ";
-		$data .= ", tax_id = '$tax_id' ";
+		$data .= ", nin_id = '$nin_id' ";
 		
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO borrowers set ".$data);

@@ -1,3 +1,16 @@
+<?php
+ob_start();
+
+ session_start();
+ include_once('admin/db_connect.php');
+ if (strlen($_SESSION['id']==0)) {
+  
+  header('location:logout.php');
+  ob_end_flush();
+  } else{
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,9 +39,9 @@
                 <h1>SunPaid</h1>
                 <div class="otherNavs">
                     <a href="./home.php"><p>Dashboard</p></a>
-                    <a href="./repayment.html"><h2 class="pgName">Repayment</h2></a>
-                    <a href="./settings.html"><p>Settings</p></a>
-                    <a href="./about.html"><p>About</p></a>
+                    <a href="./repayment.php"><h2 class="pgName">Repayment</h2></a>
+                    <a href="./settings.php"><p>Settings</p></a>
+                    <a href="./about.php"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
             </div>
@@ -57,14 +70,32 @@
         </div>
         <!-- DON'T TOUCH THE ABOVE CODE -->
 
+<!-- special code for fetching out data for repayment -->
+<?php
+							
+	include_once('repay.php');
+          
+?>
         <div class="repayMain">
             <div class="repayCard">
                 <p>Total Repayable Amount</p>
-                <h2>₦ 20000</h2>
+                <h2> ₦ <?php               
+                       
+                echo number_format($total,2)  ?> </h2>
                 <a href="#repays"><small>click to view all repayment plans</small></a>
             </div>
         </div>
     </div>
+
+   
+
+
+  
+
+
+
+
+
 
     <div id="repays">
             
@@ -77,12 +108,24 @@
         <div id="trick"></div>
         <!-- DON'T TOUCH THE ABOVE CODE -->
         
+
+
         <div class="viewRepayment">
             <div>
-                <p>Repayable Amount: ₦<span>500</span></p>
+                <p>Repayable Amount: ₦<span>
+          <?php echo number_format($monthly,2) ?>
+                </span></p>
                 <a href="#">Pay Now</a>
             </div>
-            <p class="repayDtl">Repayment for loan collected at <span>April 15th</span></p>
+            <p class="repayDtl">Repayment for loan collected at: <span>
+          <?php $today = date("d/m/Y");
+          echo $today;  ?>
+            </span></p> 
+            <p class="repayDtl">Next Repayment for loan: <br><span>
+            <?php $today = strtotime("1month", strtotime(date("Y-m-d")));
+            $nextday = date("d/m/Y", $today++);
+          echo $nextday;  ?>
+            </span></p> 	
         </div>
 
     </div>
@@ -90,3 +133,5 @@
     <script src="./js/app.js"></script>
 </body>
 </html>
+
+<?php  } ?>
