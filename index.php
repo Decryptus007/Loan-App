@@ -14,7 +14,7 @@
     <title>SunPaid</title>
 </head>
 
-<body>
+<body class="index">
     <div class="loginUI">
         <section class="headTitle">
             <h1>SunPaid Loan App</h1>

@@ -18,8 +18,22 @@ body {
     background-size: cover;
 }
 
+input, textarea {
+    transition: .3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 3px 3px 10px black;
+    transform: scale(1.1, 1.1);
+}
+
 .mNav {
     display: none;
+}
+
+.mNav #openSide {
+    font-size: x-large;
 }
 
 .nav,
@@ -209,6 +223,12 @@ body {
 }
 
 @media (max-width: 425px) {
+    input:focus, textarea:focus {
+        outline: none;
+        box-shadow: none;
+        transform: scale(1.0, 1.0);
+    }
+
     .cards .card {
         width: 98%;
         height: 200px;

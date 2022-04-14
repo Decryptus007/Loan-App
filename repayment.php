@@ -41,6 +41,7 @@ ob_start();
                     <a href="./home.php"><p>Dashboard</p></a>
                     <a href="./repayment.php"><h2 class="pgName">Repayment</h2></a>
                     <a href="./settings.php"><p>Settings</p></a>
+                    <a href="./support.html"><p>Support</p></a>
                     <a href="./about.php"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
