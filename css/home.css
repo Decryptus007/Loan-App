@@ -118,6 +118,11 @@ body {
     margin-top: 20%;
 }
 
+.cardTail a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .cardTail small {
     text-decoration: underline;
     cursor: zoom-in;

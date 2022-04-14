@@ -32,6 +32,10 @@
     width: 80%;
 }
 
+.loginUI .signUpMain {
+    width: 95%;
+}
+
 main h2 {
     text-align: center;
     font-size: x-large;
@@ -42,32 +46,56 @@ main form {
     padding-bottom: 3%;
     display: block;
     margin: 3% auto;
-    width: 50vw;
+    font-size: medium;
+    width: 40vw;
     border-radius: 15px;
     box-shadow: 2px 2px 15px grey;
     background-color: #eff3fa;
 }
 
+main .signUpForm {
+    width: 100%;
+}
+
+main .signUpForm section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .signUpForm section div {
+    width: 90%;
+}
+
 main form label {
     display: block;
-    width: 75%;
+    width: 90%;
     margin: 5% auto;
 }
 
 main form span {
-    font-size: larger;
+    font-size: medium;
     margin-bottom: 1%;
 }
 
 main form input,
 form label textarea {
     display: block;
-    font-size: large;
+    font-size: medium;
     padding-left: 10%;
     border: 1px solid #7eb5fc;
     width: 100%;
     border-radius: 10px;
-    height: 45px;
+    height: 35px;
+}
+
+main form input {
+    width: 85%;
+    transition: .3s;
+}
+main form input:focus {
+    width: 100%;
 }
 
 form .inputHolder {
@@ -75,12 +103,12 @@ form .inputHolder {
 }
 
 .inputHolder .icon {
-    padding: 2%;
+    padding: 1.8%;
     background-color: black;
     border-radius: 10px 0 0 10px;
     color: #7eb5fc;
     position: absolute;
-    font-size: x-large;
+    font-size: large;
     font-weight: 700;
     top: 3.5%;
     left: 0;
@@ -160,6 +188,21 @@ main .authBtns:nth-child(2):hover {
     color: #040494;
 }
 
+@media (max-width: 768px) {
+    main form input {
+        padding-left: 15%;
+    }
+
+    main .signInForm input {
+        height: 38px;
+    }
+
+    .inputHolder .icon {
+        top: 4%;
+        padding: 3%;
+    }
+}
+
 @media (max-width: 425px) {
     .loginUI {
         margin-top: 10%;
@@ -204,15 +247,17 @@ main .authBtns:nth-child(2):hover {
         margin: 10% auto;
     }
 
+    main .signUpForm section {
+        flex-direction: column;
+    }
+
     main form input,
     form label textarea {
         display: block;
         font-size: medium;
-        padding-left: 20%;
         border: 1px solid #7eb5fc;
         width: 100%;
         border-radius: 10px;
-        height: 40px;
     }
 
     form label textarea {

@@ -66,62 +66,67 @@ $password = mysqli_real_escape_string($conn, $password);
             <h1>SunPaid Loan App</h1>
             <p>Online loan, as fast as 5 minutes</p>
         </section>
-        <main>
+        <main class="signUpMain">
             <h2>Sign Up</h2>
-            <form id="sign-up" method="post">
-                <label><span>First Name:</span>
-                    <div class="inputHolder">
-                        <input type="text" placeholder="FirstName" name="fname" />
-                        <i class="icon fa-solid fa-person"></i>
+            <form id="sign-up" class="signUpForm" method="post">
+                <section>
+                    <div>
+                        <label><span>First Name:</span>
+                            <div class="inputHolder">
+                                <input type="text" placeholder="FirstName" name="fname" />
+                                <i class="icon fa-solid fa-person"></i>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Middle Name:</span>
+                            <div class="inputHolder">
+                                <input type="text" placeholder="MiddleName" name="mname" />
+                                <i class="icon fa-solid fa-person"></i>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Last Name:</span>
+                            <div class="inputHolder">
+                                <input type="text" placeholder="LastName" name="lname" />
+                                <i class="icon fa-solid fa-person"></i>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Email:</span>
+                            <div class="inputHolder">
+                                <input type="email" placeholder="Input your Email" name="email" />
+                                <i class="icon fa-regular fa-envelope"></i>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Phone Number:</span>
+                            <div class="inputHolder">
+                                <input type="tel" placeholder="Phone No." name="phone"/>
+                                <i class="icon fa-solid fa-phone"></i>
+                            </div>
+                        </label>
                     </div>
-                </label>
-                <label>
-                    <span>Middle Name:</span>
-                    <div class="inputHolder">
-                        <input type="text" placeholder="MiddleName" name="mname" />
-                        <i class="icon fa-solid fa-person"></i>
+                    <div>
+                        <label>
+                            <span>NIN Number:</span>
+                            <div class="inputHolder">
+                                <input type="text" placeholder="NIN ID" name="nin" />
+                                <i class="icon fa-regular fa-id-card"></i>
+                            </div>
+                        </label>
+                        <label>
+                            <span>Your Address:</span>
+                            <textarea placeholder="Your Address" name="address" ></textarea>
+                        </label>
+                        <label>
+                            <span>Password:</span>
+                            <div class="inputHolder">
+                                <input type="password" placeholder="Input your Password" name="password" />
+                                <i class="icon fa-solid fa-key"></i>
+                            </div>
+                        </label>
                     </div>
-                </label>
-                <label>
-                    <span>Last Name:</span>
-                    <div class="inputHolder">
-                        <input type="text" placeholder="LastName" name="lname" />
-                        <i class="icon fa-solid fa-person"></i>
-                    </div>
-                </label>
-                <label>
-                    <span>Email:</span>
-                    <div class="inputHolder">
-                        <input type="email" placeholder="Input your Email" name="email" />
-                        <i class="icon fa-regular fa-envelope"></i>
-                    </div>
-                </label>
-                <label>
-                    <span>Phone Number:</span>
-                    <div class="inputHolder">
-                        <input type="tel" placeholder="Phone No." name="phone"/>
-                        <i class="icon fa-solid fa-phone"></i>
-                    </div>
-                </label>
-                <label>
-                    <span>NIN Number:</span>
-                    <div class="inputHolder">
-                        <input type="text" placeholder="NIN ID" name="nin" />
-                        <i class="icon fa-regular fa-id-card"></i>
-                    </div>
-                </label>
-                <label>
-                    <span>Your Address:</span>
-                    <textarea placeholder="Your Address" name="address" ></textarea>
-                </label>
-                <label>
-                    <span>Password:</span>
-                    <div class="inputHolder">
-                        <input type="password" placeholder="Input your Password" name="password" />
-                        <i class="icon fa-solid fa-key"></i>
-                    </div>
-                </label>
-
+                </section>
                 <button type="submit" name="submits"> SIGN UP </button>
             </form>
             <p class="signUp">Already have an account? <a href="./signIn.php" class="signUpLink">Login</a></p>

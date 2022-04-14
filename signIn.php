@@ -47,7 +47,7 @@ echo "<script>alert('Invalid username or password');</script>";
         </section>
         <main class="signBtn">
             <h2>Log In</h2>
-            <form method="post" >
+            <form class="signInForm" method="post" >
                 <label>
                     <span>Email:</span>
                     <div class="inputHolder">

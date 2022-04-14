@@ -139,7 +139,7 @@ ob_start();
                 <p>Repayable Amount: <span>₦ 50000</span></p>
             </div>
             <div class="cardTail">
-                <small>Repayment Details</small>
+                <a href="./repayment.php#repays"><small>Repayment Details</small></a>
                 <a href="./repayment.php"><span class="pay">Pay Now</span></a>
             </div>
         </div>

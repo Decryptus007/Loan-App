@@ -28,7 +28,7 @@
     box-shadow: -1px -1px 5px white;
     border-radius: 10px;
     cursor: pointer;
-    transition: .2s;
+    transition: .5s;
 }
 
 .settingUI .icon {
@@ -38,7 +38,8 @@
 }
 
 .settingUI div:hover {
-    background-color: white;
+    box-shadow: inset 1px 1px 5px black;
+    border: none;
 }
 
 .upForm {
