@@ -5,7 +5,15 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+    background: url('../images/index.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .loginUI {
+    background: linear-gradient(#fafafa8a, #fafafa81);
     padding: 2%;
     margin-top: 2%;
 }
