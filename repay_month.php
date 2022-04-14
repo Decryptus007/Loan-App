@@ -15,7 +15,7 @@ $userid=$_SESSION['id'];
 $status=2;
 
 $qry = $conn->query("SELECT * from loan_list  WHERE borrower_id='$userid' AND status ='$status'");
-$total=0;
+$tot=0;
 while($row = $qry->fetch_assoc()){
     
     $monthly = ($row['amount'] + ($row['amount'] * ($plan_arr[$row['plan_id']]['interest_percentage']/100))) / $plan_arr[$row['plan_id']]['months'];
@@ -31,9 +31,9 @@ while($row = $qry->fetch_assoc()){
         $sum_paid += ($p['amount'] - $p['penalty_amount']);
     }
    
-    $sum = ($monthly * $plan_arr[$row['plan_id']]['months']);
-    $total +=  $sum ;
-    $total--;
+    $sum = $monthly ;
+    $tot +=  $sum ;
+    $tot--;
     }   
 
 

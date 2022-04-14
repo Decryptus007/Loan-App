@@ -125,7 +125,7 @@ ob_start();
                 <p>Loan Amount: <span>
       <!--  ends here for fetching the amount user borrow -->
 
-            ₦<?php echo $tamount. ' : 00';  ?>
+            ₦<?php echo number_format($tamount,2);  ?>
                 </span></p>
 
             </div>
@@ -134,9 +134,14 @@ ob_start();
                 <span id="applyLoan" class="pay">Apply Loan</span>
             </div>
         </div>
+
+            <?php   include_once('repay.php');  ?>
+            
         <div class="card">
             <div class="cardHead">
-                <p>Repayable Amount: <span>₦ 50000</span></p>
+                <p>Repayable Amount: <span>
+                ₦<?php  echo number_format($total,2); ?>
+                </span></p>
             </div>
             <div class="cardTail">
                 <a href="./repayment.php#repays"><small>Repayment Details</small></a>

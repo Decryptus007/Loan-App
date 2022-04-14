@@ -107,24 +107,46 @@ ob_start();
         </div>
         <div id="trick"></div>
         <!-- DON'T TOUCH THE ABOVE CODE -->
+ 
         
-
-
+<?php						
+	include_once('repay_month.php');    
+?>
         <div class="viewRepayment">
             <div>
                 <p>Repayable Amount: ₦<span>
-          <?php echo number_format($monthly,2) ?>
+                        <?php
+                        echo number_format($tot,2) 
+                        ?>
                 </span></p>
                 <a href="#">Pay Now</a>
             </div>
             <p class="repayDtl">Repayment for loan collected at: <span>
-          <?php $today = date("d/m/Y");
-          echo $today;  ?>
+                        <?php  
+                            $qry = $conn->query("SELECT * from loan_list  WHERE borrower_id='$userid' AND status ='$status'");
+
+                            while($row = $qry->fetch_assoc()){
+                            ?>
+                                    <p><small><b><?php 
+                                    if(isset($row['date_released'])) {
+                                        echo date("M d, Y",strtotime($row['date_released'])); }
+                                    else{
+                                    echo "Not Available Yet";
+                                    }     
+                                    ?></small></b></p>
+                        <?php  }  ?>
+       
             </span></p> 
             <p class="repayDtl">Next Repayment for loan: <br><span>
-            <?php $today = strtotime("1month", strtotime(date("Y-m-d")));
-            $nextday = date("d/m/Y", $today++);
-          echo $nextday;  ?>
+            <?php    
+            
+                if(isset($next)){
+                echo date('M d, Y',strtotime($next));
+                }else{
+                    echo "Not Available Yet";
+                }
+            ?>
+
             </span></p> 	
         </div>
 
