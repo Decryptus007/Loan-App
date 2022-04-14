@@ -82,7 +82,7 @@ ob_start();
                     <a href="./home.php"><h2 class="pgName">Dashboard</h2></a>
                     <a href="./repayment.php"><p>Repayment</p></a>
                     <a href="./settings.php"><p>Settings</p></a>
-                    <a href="./support.html"><p>Support</p></a>
+                    <a href="./support.php"><p>Support</p></a>
                     <a href="./about.php"><p>About</p></a>
                     <a class="logOut" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                 </div>
@@ -291,7 +291,7 @@ ob_start();
 						 		<?php elseif($row['status'] == 1): ?>
 						 			<span class="badge badge-info">Approved</span>
 					 			<?php elseif($row['status'] == 2): ?>
-						 			<span class="badge badge-primary">Released</span>
+						 			<span class="badge badge-primary">Released</span><a href="#">Click Here to Withdraw </a>
 					 			<?php elseif($row['status'] == 3): ?>
 						 			<span class="badge badge-success">Completed</span>
 					 			<?php elseif($row['status'] == 4): ?>

@@ -1,3 +1,34 @@
+<?php
+ob_start();
+
+session_start();
+include_once('admin/db_connect.php');
+if (strlen($_SESSION['id']==0)) {
+ 
+ header('location:logout.php');
+ ob_end_flush();
+ } else{
+
+if(isset($_POST['submits']))
+{
+            $message=$_POST['message'];
+            $useremail=$_SESSION['email'];
+
+            $message = mysqli_real_escape_string($conn, $message);
+            $useremail = mysqli_real_escape_string($conn, $useremail);
+
+
+                $msg=mysqli_query($conn,"INSERT into support(user,message) VALUES('$useremail','$message')");
+    
+                    if($msg)
+                    {
+                        echo "<script>alert('Message Submit, Support will reach you via Email');</script>";
+                        echo "<script type='text/javascript'> document.location = 'support.php'; </script>";
+                    }
+        
+}     
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +69,7 @@
                     <a href="./settings.php">
                         <p>Settings</p>
                     </a>
-                    <a href="./support.html">
+                    <a href="./support.php">
                         <h2 class="pgName">Support</h2>
                     </a>
                     <a href="./about.php">
@@ -62,9 +93,9 @@
         <div class="supportUI">
             <h2>Encountering an issue acquiring a loan?</h2>
             <p>Get in touch with our team now and we will get back to you as fast as we can.</p>
-            <form>
-                <textarea placeholder="Type your issue here..."></textarea>
-                <button><i class="fa-regular fa-paper-plane"></i> Send</button>
+            <form method="post">
+                <textarea name="message" placeholder="Type your issue here..."></textarea>
+                <button type="submit" name="submits"><i class="fa-regular fa-paper-plane"></i> Send</button>
             </form>
         </div>
     </div>
@@ -72,3 +103,4 @@
 </body>
 
 </html>
+<?php } ?>
