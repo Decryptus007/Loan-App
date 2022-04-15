@@ -353,16 +353,15 @@ ob_start();
                 <input type="number" name="acct" placeholder="Account Number" />
                 <!-- <input id="refrNo" type="number" name="refNo" placeholder="Reference Number" /> -->
 
-                <input id="refrNo" name="refrNo" type="text" placeholder="Reference Number" disabled/>
+                <!-- THE NAME ATTRIBUTE HAS BEEN SET IN JAVASCRIPT JUST FETCH IT IN YOUR QUERY -->
+                <!-- PLEASE TAKE NOTE::>> THE NAME ATTRIBUTE = "refrNo" not "refNo" mind the "r" -->
+                <input id="refrNo" type="text" placeholder="Reference Number" disabled/>
 
-                <button type="submit" name="withdraw">Withdraw</button>
+                <button type="submit" id="wthdrwBtn" name="withdraw">Withdraw</button>
             </form>
         </div>                            
     </div>
-        <!-- FILL BANK DETAILS MODAL ends -->
-
-    
-
+    <!-- FILL BANK DETAILS MODAL ends -->
 
 
     <script src="./js/app.js"></script>

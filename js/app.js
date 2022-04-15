@@ -10,6 +10,7 @@ const withdraw = document.getElementsByClassName("withdraw")
 const fillDetails = document.getElementById("fillDetails")
 const overlayB = document.getElementById("overlayB")
 const refrIn = document.getElementById("refrNo")
+const wthdrwBtn = document.getElementById("wthdrwBtn")
 
 const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
@@ -49,7 +50,11 @@ Array.from(withdraw).forEach(el => {
     el.addEventListener('click', () => {
         refrNo = el.parentElement.parentElement.parentElement.parentElement.getElementsByTagName("p")[1].getElementsByTagName("span")[0].innerText
         refrIn.value = refrNo
+        refrIn.setAttribute("name", "refrNo")
+        refrIn.setAttribute("title", "Your unique reference number")
         toggleWithdraw(1, 1)
+        console.log(refrIn.name);
+        console.log(document.getElementsByName("refrNo")[0].value);
     })
 })
 
@@ -116,12 +121,16 @@ overlaySide.addEventListener('click', () => {
     nav.style.transform = 'translateX(-100%)'
 })
 
+wthdrwBtn.addEventListener('click', (e) => {
+    // e.preventDefault()
+    console.log("Bank withdrawal opened");
+})
 overlayB.addEventListener('click', () => toggleWithdraw(0, 0))
 
-loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value, purpose.value, amount.value))
-loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
-purpose.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
-amount.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
+loanPlan.addEventListener('keyup', () => valCheck(loanPlan.value, loanType.value, purpose.value, amount.value))
+loanType.addEventListener('keyup', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
+purpose.addEventListener('keyup', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
+amount.addEventListener('keyup', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
 
 dispApply.addEventListener('click', () => {
     applyWindow.style.transform = 'scale(1, 1)'
