@@ -315,6 +315,7 @@ ob_start();
                 <input type="text" placeholder="Account Name" />
                 <input type="text" placeholder="Bank Name" />
                 <input type="number" placeholder="Account Number" />
+                <input id="refrNo" type="text" placeholder="Reference Number" disabled/>
 
                 <button>Withdraw</button>
             </form>

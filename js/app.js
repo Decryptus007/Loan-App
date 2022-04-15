@@ -9,6 +9,7 @@ const loanStatus = document.getElementsByClassName("badge")
 const withdraw = document.getElementsByClassName("withdraw")
 const fillDetails = document.getElementById("fillDetails")
 const overlayB = document.getElementById("overlayB")
+const refrIn = document.getElementById("refrNo")
 
 const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
@@ -43,11 +44,12 @@ Array.from(loanStatus).forEach(el => {
 })
 
 const toggleWithdraw = (a, b) => fillDetails.style.transform = `scale(${a}, ${b})`
-
+let refrNo
 Array.from(withdraw).forEach(el => {
     el.addEventListener('click', () => {
+        refrNo = el.parentElement.parentElement.parentElement.parentElement.getElementsByTagName("p")[1].getElementsByTagName("span")[0].innerText
+        refrIn.value = refrNo
         toggleWithdraw(1, 1)
-        console.log(el.id);
     })
 })
 
