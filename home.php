@@ -298,11 +298,11 @@ ob_start();
 						 			<span class="badge badge-danger">Denied</span>
 						 		<?php endif; ?>
                 </span></p>
+                
             </div>
         <?php }       ?>
-       <button id="closeLoanD" class="closeLoanD">
-            Close
-        </button>
+
+       <button id="closeLoanD" class="closeLoanD">Close</button>
         
     </div>
           

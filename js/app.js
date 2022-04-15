@@ -5,6 +5,9 @@ const overlay = document.getElementById("overlay")
 const overlayL = document.getElementById("overlayL")
 const applyWindow = document.getElementById("windowLoan")
 const loanDetails = document.getElementById("loanDetails")
+const loanStatus = document.getElementsByClassName("badge")
+const withdraw = document.getElementById("withdraw")
+
 const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
 const cancelApply = document.getElementById("cancelApply")
@@ -25,6 +28,11 @@ const nav = document.getElementById("nav")
 
 const closeLoanD = document.getElementById("closeLoanD")
 
+Array.from(loanStatus).forEach(el => {
+    if (el.textContent == "Released") {
+        console.log(true);
+    }
+})
 
 const calc = () => {
     let totalAmount
@@ -54,6 +62,8 @@ const calc = () => {
         penAmtHolder = parseFloat((mnthlyAmt.value / 100) * 2)
         penAmt.value = penAmtHolder.toFixed(2)
     }
+
+    penAmt.scrollIntoView()
 }
 
 const valCheck = (param1, param2, param3, param4) => {
