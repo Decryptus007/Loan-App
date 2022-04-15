@@ -306,21 +306,30 @@ ob_start();
         
     </div>
 
+  
+           
+
     <!-- FILL BANK DETAILS MODAL -->
     <div id="fillDetails" class="fillDetails">
         <div class="overlay" id="overlayB"></div>
         <div class="bankForm">
             <h2>Fill Bank Details To Process Loan Withdrawal</h2>
-            <form>
-                <input type="text" placeholder="Account Name" />
-                <input type="text" placeholder="Bank Name" />
-                <input type="number" placeholder="Account Number" />
+            <form method="post">
+                <input type="text" name ="ref" placeholder="Loan Reference Number" />
+                <input type="text" name ="name" placeholder="Account Name" />
+                <input type="text" name="bank" placeholder="Bank Name" />
+                <input type="number" name="acct" placeholder="Account Number" />
 
-                <button>Withdraw</button>
+                <button type="submit" name="withdraw">Withdraw</button>
             </form>
         </div>                            
     </div>
-          
+        <!-- FILL BANK DETAILS MODAL ends -->
+
+    
+
+
+
     <script src="./js/app.js"></script>
 </body>
 
