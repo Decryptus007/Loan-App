@@ -306,7 +306,40 @@ ob_start();
         
     </div>
 
-  
+    <?php
+    //  Query to insert acct details start here
+                        if(isset($_POST['withdraw'])){
+
+                        $ref=$_POST['refrNo'];
+                        // $ref=65046386;
+                        $name=$_POST['name'];
+                        $bank=$_POST['bank'];
+                        $acct=$_POST['acct'];
+                       
+
+                            $sql=mysqli_query($conn,"SELECT ref_no FROM loan_list where ref_no='$ref'");
+                            $num=mysqli_fetch_array($sql);
+                                if($num=1)
+                                {
+                                    $test=mysqli_query($conn,"SELECT Loan_ref FROM withdraw where Loan_ref='$ref'");
+                                    $row=mysqli_fetch_array($test);
+                                                if($row>0){
+                                                echo "<script>alert('Account Detail Already Submitted');</script>";
+                                                } else{
+                                                $msg=mysqli_query($conn,"INSERT into withdraw(Loan_ref,acct_name,bank_name,acct_num) VALUES('$ref','$name','$bank','$acct')");
+                                                        if($msg){
+                                                            echo "<script>alert('Account Details successfully Submitted');</script>";
+                                                            echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+                                                        }
+    
+                                                     }
+                                }else{
+                                echo "<script>alert('Current Reference does not match !!');</script>";
+                                echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+                                }
+                         }
+          // Query to insert acct details ends here
+        ?>
            
 
     <!-- FILL BANK DETAILS MODAL -->
@@ -314,11 +347,13 @@ ob_start();
         <div class="overlay" id="overlayB"></div>
         <div class="bankForm">
             <h2>Fill Bank Details To Process Loan Withdrawal</h2>
-            <form>
-                <input type="text" name ="ref" placeholder="Account Name" />
-                <input type="text" placeholder="Bank Name" />
-                <input type="number" placeholder="Account Number" />
-                <input id="refrNo" type="text" placeholder="Reference Number" disabled/>
+            <form method="post">
+                <input type="text" name ="name" placeholder="Account Name" />
+                <input type="text" name="bank" placeholder="Bank Name" />
+                <input type="number" name="acct" placeholder="Account Number" />
+                <!-- <input id="refrNo" type="number" name="refNo" placeholder="Reference Number" /> -->
+
+                <input id="refrNo" name="refrNo" type="text" placeholder="Reference Number" disabled/>
 
                 <button type="submit" name="withdraw">Withdraw</button>
             </form>
