@@ -117,10 +117,10 @@ ob_start();
             <div>
                 <p>Repayable Amount: ₦<span>
                         <?php
-                        echo number_format($tot,2) 
+                        echo number_format($amount,2);
                         ?>
                 </span></p>
-                <a href="#">Pay Now</a>
+                <a href="initialize.php">Pay Now</a>
             </div>
             <p class="repayDtl">Repayment for loan collected at: <span>
                         <?php  
