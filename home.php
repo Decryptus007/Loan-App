@@ -314,11 +314,11 @@ ob_start();
         <div class="overlay" id="overlayB"></div>
         <div class="bankForm">
             <h2>Fill Bank Details To Process Loan Withdrawal</h2>
-            <form method="post">
-                <input type="text" name ="ref" placeholder="Loan Reference Number" />
-                <input type="text" name ="name" placeholder="Account Name" />
-                <input type="text" name="bank" placeholder="Bank Name" />
-                <input type="number" name="acct" placeholder="Account Number" />
+            <form>
+                <input type="text" name ="ref" placeholder="Account Name" />
+                <input type="text" placeholder="Bank Name" />
+                <input type="number" placeholder="Account Number" />
+                <input id="refrNo" type="text" placeholder="Reference Number" disabled/>
 
                 <button type="submit" name="withdraw">Withdraw</button>
             </form>
