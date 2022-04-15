@@ -9,45 +9,7 @@ ob_start();
   ob_end_flush();
   } else{
 
-
-     
-                if(isset($_POST['submit'])) 
-                   
-                    {
-   
-                        $plan=$_POST['plan_id'];
-                        $type=$_POST['loan_type_id'];
-                        $purpose=$_POST['purpose'];
-                        $amount=$_POST['amount'];
-                        $status= 0;
-                        $borrowers = $_SESSION['id'];
-                        $data = 0;
-                                       
-                                        $ref_no = mt_rand(1,99999999);
-                                        $i= 1;
-
-                                            while($i== 1){
-                                                $check = mysqli_query($conn,"SELECT * FROM loan_list where ref_no ='$ref_no' ")->num_rows;
-                                                if($check > 0){
-                                                $ref_no = mt_rand(1,99999999);
-                                                }else{
-                                                    $i = 0;
-                                                }
-                                            }
-                                            $data .= " , ref_no = '$ref_no' ";
-                                        
-                                      
-                
-                                        $msg=mysqli_query($conn,"INSERT into loan_list(loan_type_id, borrower_id, purpose, amount, plan_id, status,ref_no) VALUES('$type','$borrowers','$purpose','$amount','$plan','$status','$ref_no')");
-                            
-                                    if($msg)
-                                    {
-                                        echo "<script>alert('Loan successfully submitted');</script>";
-                                        echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
-                                    }
-                                
-    
-                      }
+    include_once('insert_loans.php');
     
 ?>
 
@@ -98,6 +60,7 @@ ob_start();
             </div>
 
         </div>
+
         <div class="pageUI">
         <div class="cards">
         <div class="card">
@@ -153,215 +116,23 @@ ob_start();
         </div>
     </div>
 
-    <!-- APPLY LOAN FORM -->
-    <div id="windowLoan" class="applyLoan">
-        <div class="overlay" id="overlay"></div>
-        <div class="applyForm">
-            <h2>Apply Loan Form</h2>
-            <form method="post">
-               
-                <?php
-				$plan = $conn->query("SELECT * FROM loan_plan  ");
-				?>
-                <label>
-                    <span>Select Loan Plan:</span>
-                    <select name="plan_id" id="plan_id">
-                    <option value="">---</option>
-						<?php while($row = $plan->fetch_assoc()): ?>
-							<option value="<?php echo $row['id'] ?>" <?php echo isset($plan_id) && $plan_id == $row['id'] ? "selected" : '' ?> data-months="<?php echo $row['months'] ?>" data-interest_percentage="<?php echo $row['interest_percentage'] ?>" data-penalty_rate="<?php echo $row['penalty_rate'] ?>"><?php echo $row['months'] . ' month/s [ '.$row['interest_percentage'].'%, '.$row['penalty_rate'].'% ]' ?></option>
-						<?php endwhile; ?>
-                    </select>
-                    <small>months [ interest%,penalty% ]</small>
-                </label>
+            <!-- APPLY LOAN FORM start -->
+        
+            <?php  include_once('apply.php'); ?>
 
-                <?php
-				$type = $conn->query("SELECT * FROM loan_types ");
-				?>
-                <label>
-                    <span>Select Loan Type:</span>
-                    <select name="loan_type_id" id="loan_plan_id">
-                    <option value="">---</option>
-						<?php while($row = $type->fetch_assoc()): ?>
-							<option value="<?php echo $row['id'] ?>" <?php echo isset($loan_type_id) && $loan_type_id == $row['id'] ? "selected" : '' ?>><?php echo $row['type_name'] ?></option>
-						<?php endwhile; ?>
-                    </select>
-                </label>
-
-                <label>
-                    <span>Purpose of Applying Loan:</span>
-                    <textarea id="purpose" required name="purpose" cols="30" rows="2" placeholder="Type Here..." ><?php echo isset($purpose) ? $purpose : '' ?></textarea>
-                </label>
-
-                <label>
-                    <span>Amount:</span>
-                    <input id="amount" required type="number" name="amount" placeholder="Input Amount"  value=""<?php echo isset($amount) ? $amount : '' ?>">
-                    
-                </label>
-                <button type="submit"  name="result" id="calcBtn"> Calculate</button>
-
-                
-                <!-- CALCULATED WINDOW -->
-                <div id="calcWindow">
-                    
-                        <label>
-                            <span>Total Payable Amount:</span>
-                            <input id="totalAmt" type="number" name ="tpa"  disabled value="" />
-                        </label>
-                        <label>
-                            <span>monthly Payable Amount:</span>
-                            <input id="mnthlyAmt" type="number" name="mpa" disabled value="" />
-                        </label>
-                        <label>
-                            <span>Penalty Amount:</span>
-                            <input id="penAmt" type="number" name="pa" disabled value="" />
-                        </label>
-                    <div class="otherCalcBtns">
-                        <button type="submit" name="submit" >Submit</button>
-                        <button id="cancelApply">Cancel</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    
+            <!-- APPLY LOAN FORM ends-->
 
          
-    <!-- LOAN DETAILS -->
-    <div id="loanDetails" class="loanDetails">
-        <div class="overlay" id="overlayL"></div>
-        <div class="loanHolder">
-            <h2>Loan Details</h2>
-                <?php
-                  $userid = $_SESSION['id'];
-                  $query=mysqli_query($conn,"SELECT * FROM borrowers WHERE id='$userid'");
-                  while($result=mysqli_fetch_array($query))
-                  {
-                      $_SESSION['fname']= $result['firstname'];
-                      $_SESSION['lname']= $result['lastname'];
-                      $_SESSION['email']= $result['email'];
-          
-                  } 
-                $result = $conn->query("SELECT * FROM loan_list WHERE borrower_id = '$userid'");
-              //  $emparray = array();
-                while($row =mysqli_fetch_assoc($result))
-                {
-                  //  $emparray[] = $row;
-                
-
-
-                ?>
-            <div class="loanDetail">
-                    <!-- php loan details -->
-                <p>Name: <span> <?php echo $_SESSION['fname'].' '. $_SESSION['lname']; ?> </span></p>
-                <p>Reference No: <span><?php echo $row['ref_no']; ?></span></p>
-                <p>Loan Type: <span>
-                    <?php if($row['loan_type_id']=="1"){ 
-                    echo "Small Business";}
-                    elseif ($row['loan_type_id']=="2") {
-                     echo "Mortgages";
-                    }elseif($row['loan_type_id']=="3"){
-                        echo "Personal Loans";
-                    }else {
-                        echo "Not Valid";
-                    } ?>
-                    </span></p>
-                <p>Loan Plan: <span>
-                     <?php if($row['plan_id']=="1"){ 
-                    echo "36 Months";}
-                    elseif ($row['plan_id']=="2") {
-                     echo "24 Months";
-                    }elseif($row['plan_id']=="3"){
-                        echo "27 Months";
-                    }else {
-                        echo "Not Valid";
-                    } ?></span></p>
-                <p>Loan Purpose: <span> <?php echo $row['purpose']; ?></span></p>
-                <p>Loan Amount: <span>NGN <?php echo $row['amount']; ?></span></p>
-                <p>Date Released: <span>
-                <?php if($row['date_released']=="0000-00-00 00:00:00"){ 
-                    echo "Not Available Yet";
-                    }else {
-                        echo $row['date_released'];
-                    } ?>
-                    </span></p>
-                <p>Loan Status: <span>
-                <?php if($row['status'] == 0): ?>
-						 			<span class="badge badge-warning">For Approval</span>
-						 		<?php elseif($row['status'] == 1): ?>
-						 			<span class="badge badge-info">Approved</span>
-					 			<?php elseif($row['status'] == 2): ?>
-						 			<span class="badge badge-primary">Released</span>
-					 			<?php elseif($row['status'] == 3): ?>
-						 			<span class="badge badge-success">Completed</span>
-					 			<?php elseif($row['status'] == 4): ?>
-						 			<span class="badge badge-danger">Denied</span>
-						 		<?php endif; ?>
-                </span></p>
-                
-            </div>
-        <?php }       ?>
-
-       <button id="closeLoanD" class="closeLoanD">Close</button>
+            <!-- LOAN DETAILS start-->
         
-    </div>
+            <?php  include_once('details.php'); ?>
 
-    <?php
-    //  Query to insert acct details start here
-                        if(isset($_POST['withdraw'])){
+            <!-- LOAN DETAILS ends-->
 
-                        $ref=$_POST['refrNo'];
-                        // $ref=65046386;
-                        $name=$_POST['name'];
-                        $bank=$_POST['bank'];
-                        $acct=$_POST['acct'];
-                       
 
-                            $sql=mysqli_query($conn,"SELECT ref_no FROM loan_list where ref_no='$ref'");
-                            $num=mysqli_fetch_array($sql);
-                                if($num=1)
-                                {
-                                    $test=mysqli_query($conn,"SELECT Loan_ref FROM withdraw where Loan_ref='$ref'");
-                                    $row=mysqli_fetch_array($test);
-                                                if($row>0){
-                                                echo "<script>alert('Account Detail Already Submitted');</script>";
-                                                } else{
-                                                $msg=mysqli_query($conn,"INSERT into withdraw(Loan_ref,acct_name,bank_name,acct_num) VALUES('$ref','$name','$bank','$acct')");
-                                                        if($msg){
-                                                            echo "<script>alert('Account Details successfully Submitted');</script>";
-                                                            echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
-                                                        }
-    
-                                                     }
-                                }else{
-                                echo "<script>alert('Current Reference does not match !!');</script>";
-                                echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
-                                }
-                         }
-          // Query to insert acct details ends here
-        ?>
-           
-
-    <!-- FILL BANK DETAILS MODAL -->
-    <div id="fillDetails" class="fillDetails">
-        <div class="overlay" id="overlayB"></div>
-        <div class="bankForm">
-            <h2>Fill Bank Details To Process Loan Withdrawal</h2>
-            <form method="post">
-                <input type="text" name ="name" placeholder="Account Name" />
-                <input type="text" name="bank" placeholder="Bank Name" />
-                <input type="number" name="acct" placeholder="Account Number" />
-                <!-- <input id="refrNo" type="number" name="refNo" placeholder="Reference Number" /> -->
-
-                <!-- THE NAME ATTRIBUTE HAS BEEN SET IN JAVASCRIPT JUST FETCH IT IN YOUR QUERY -->
-                <!-- PLEASE TAKE NOTE::>> THE NAME ATTRIBUTE = "refrNo" not "refNo" mind the "r" -->
-                <input id="refrNo" type="text" placeholder="Reference Number" disabled/>
-
-                <button type="submit" id="wthdrwBtn" name="withdraw">Withdraw</button>
-            </form>
-        </div>                            
-    </div>
-    <!-- FILL BANK DETAILS MODAL ends -->
+            <!-- FILL BANK DETAILS MODAL start -->
+            <?php  include_once('withdraw.php');  ?>
+            <!-- FILL BANK DETAILS MODAL ends -->
 
 
     <script src="./js/app.js"></script>

@@ -3,9 +3,9 @@
 extract($_POST);
 if(isset($id)){
 	$qry = $conn->query("SELECT * FROM payments where id=".$id);
-	foreach($qry->fetch_array() as $k => $val){
-		$$k = $val;
-	}
+	// foreach($qry->fetch_array() as $k => $val){
+	// 	$$k = $val;
+	// }
 }
 $loan = $conn->query("SELECT l.*,concat(b.lastname,', ',b.firstname,' ',b.middlename)as name, b.contact_no, b.address from loan_list l inner join borrowers b on b.id = l.borrower_id where l.id = ".$loan_id);
 foreach($loan->fetch_array() as $k => $v){

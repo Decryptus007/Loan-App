@@ -137,7 +137,7 @@
 	}
 </style>	
 <script>
-	$('#loan-list').dataTable()
+	// $('#loan-list').dataTable()
 	$('#new_application').click(function(){
 		uni_modal("New Loan Application","manage_loan.php",'mid-large')
 	})
