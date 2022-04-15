@@ -6,7 +6,9 @@ const overlayL = document.getElementById("overlayL")
 const applyWindow = document.getElementById("windowLoan")
 const loanDetails = document.getElementById("loanDetails")
 const loanStatus = document.getElementsByClassName("badge")
-const withdraw = document.getElementById("withdraw")
+const withdraw = document.getElementsByClassName("withdraw")
+const fillDetails = document.getElementById("fillDetails")
+const overlayB = document.getElementById("overlayB")
 
 const calcBtn = document.getElementById("calcBtn")
 const calcWindow = document.getElementById("calcWindow")
@@ -28,10 +30,25 @@ const nav = document.getElementById("nav")
 
 const closeLoanD = document.getElementById("closeLoanD")
 
+let wthdrw = 0
 Array.from(loanStatus).forEach(el => {
     if (el.textContent == "Released") {
-        console.log(true);
+        const withdraw = document.createElement("span")
+        withdraw.innerText = "Withdraw"
+        withdraw.classList.add("withdraw")
+        withdraw.setAttribute('id', `wthdrw-${wthdrw}`)
+        el.appendChild(withdraw)
+        wthdrw += 1
     }
+})
+
+const toggleWithdraw = (a, b) => fillDetails.style.transform = `scale(${a}, ${b})`
+
+Array.from(withdraw).forEach(el => {
+    el.addEventListener('click', () => {
+        toggleWithdraw(1, 1)
+        console.log(el.id);
+    })
 })
 
 const calc = () => {
@@ -97,6 +114,7 @@ overlaySide.addEventListener('click', () => {
     nav.style.transform = 'translateX(-100%)'
 })
 
+overlayB.addEventListener('click', () => toggleWithdraw(0, 0))
 
 loanPlan.addEventListener('change', () => valCheck(loanPlan.value, loanType.value, purpose.value, amount.value))
 loanType.addEventListener('change', () => valCheck(loanType.value, loanType.value, purpose.value, amount.value))
