@@ -34,7 +34,7 @@ $password = mysqli_real_escape_string($conn, $password);
             if($msg)
             {
                 echo "<script>alert('Registered successfully');</script>";
-                echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+                echo "<script type='text/javascript'> document.location = 'signin.php'; </script>";
             }
         }
 }

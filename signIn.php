@@ -1,6 +1,7 @@
 <?php
-session_start();
-// error_reporting(0);
+
+ob_start();
+ session_start(); 
 include_once('admin/db_connect.php');
 if(isset($_POST['login']))
 {
